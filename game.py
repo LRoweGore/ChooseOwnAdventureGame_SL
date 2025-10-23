@@ -59,10 +59,15 @@ if st.session_state.scene == "start":
     
     if st.button("Start New Adventure"):
         st.session_state.start_clicked = True
+
+    if st.session_state.start_clicked;
+        st.session_state.scene = "wake_up"
+        st.session_state.history = []
+        st.session_state.start_clicked = False
         
-    if st.button("Exit"):
+    if st.button("No"):
         st.write("Journey another day then...")
-        restart()
+        
 
 # Scene: wake_up -> crossroads
 elif st.session_state.scene == "wake_up":
