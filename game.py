@@ -56,10 +56,9 @@ if st.session_state.scene == "start":
     col1, col2 = st.columns(2)
     if col1.button("Start New Adventure"):
         time.sleep(0.2)
-        go("wake_up")
+        st.session_state.scene = "wake_up"
     if col2.button("Exit"):
         st.write("Journey another day then...")
-        if st.button("Close / Restart"):
             restart()
 
 # Scene: wake_up -> crossroads
