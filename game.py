@@ -49,22 +49,18 @@ def write_paragraphs(paragraphs):
 st.title("Lewis' Mini Text Adventure Game")
 
 # Scene: start
+if "next_scene" in st.session_state:
+    st.session_state.scene = st.session_state.pop("next_scene")
+
 if st.session_state.scene == "start":
     st.header("Welcome")
     st.write("Welcome to Lewis' Mini Text Adventure Game!")
     st.write("Would you like to start a new adventure?")
-
-    if "start_clicked not in st.session_state:
-        st.session_state.start_clicked = False
     
     if st.button("Start New Adventure"):
-        st.session_state.start_clicked = True
-
-    if st.session_state.start_clicked;
-        st.session_state.scene = "wake_up"
+        st.session_state.start_clicked = "wake up"
         st.session_state.history = []
-        st.session_state.start_clicked = False
-        
+    
     if st.button("No"):
         st.write("Journey another day then...")
         
