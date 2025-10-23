@@ -12,7 +12,7 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
-# Helper to play audio (Streamlit embedded audio widgets)
+# Helper to play audio (Streamlit can embed audio widgets)
 def play_sound(sound_relative_path):
     sound_path = resource_path(sound_relative_path)
     if os.path.exists(sound_path):
@@ -24,7 +24,6 @@ def play_sound(sound_relative_path):
     else:
         st.write("(Sound not found)")
 
-# Scene: start
 # Init session state
 if "scene" not in st.session_state:
     st.session_state.scene = "start"
@@ -32,21 +31,17 @@ if "scene" not in st.session_state:
 if "history" not in st.session_state:
     st.session_state.history = []
 
-# Navigation helper 
-def set_scene(next_scene, note=None):
-    # Only append history if it's a real scene change
-    if st.session_state.scene != next_scene:
-        st.session_state.history.append((st.session_state.scene, note))
+# Navigation helper
+def go(next_scene, note=None):
+    st.session_state.history.append((st.session_state.scene, note))
     st.session_state.scene = next_scene
-    st.rerun() 
 
-
+# Restart helper
 def restart():
     st.session_state.scene = "start"
     st.session_state.history = []
-    st.rerun() 
 
-# Small utility to show paragraphs with optional delays
+# Small utility to show paragraphs with optional delays (non-blocking)
 def write_paragraphs(paragraphs):
     for p in paragraphs:
         st.write(p)
@@ -59,58 +54,50 @@ if st.session_state.scene == "start":
     st.write("Welcome to Lewis' Mini Text Adventure Game!")
     st.write("Would you like to start a new adventure?")
     
-    if st.button("Start New Adventure", on_click=set_scene, args=("wake_up",)):
+    if st.button("Start New Adventure", on_click=go, args=("wake_up",)):
         st.session_state.history = []
     
     if st.button("No"):
         st.write("Journey another day then...")
         
 
- #wake_up > crossroads
+# Scene: wake_up -> crossroads
 elif st.session_state.scene == "wake_up":
     st.write("You awake in your car, and as you prepare to start the car up and leave, you peer over at your fuel, it's empty... not an ideal situation. With no idea where you are, you decide to leave the car and see a dirt path ahead of you, you follow it.")
-    
-    if st.button("Continue", on_click=set_scene, args=("crossroads",)):
+    if st.button("Continue", on_click=go, args=("crossroads",)):
         pass
 
-#crossroads
+# Scene: crossroads
 elif st.session_state.scene == "crossroads":
     st.header("Crossroads")
     st.write("As you continue following the path, you approach a crossroads, do you go left or right?")
     col1, col2 = st.columns(2)
-    
-    if col1.button("Left", on_click=set_scene, args=("left_path",)):
+    if col1.button("Left", on_click=go, args=("left_path",)):
         pass
-    
-    if col2.button("Right", on_click=set_scene, args=("right_path",)):
+    if col2.button("Right", on_click=go, args=("right_path",)):
         pass
 
-# Left path branch (lake > island > chalice or path_to_house)
+# Left path branch (lake -> island -> chalice or path_to_house)
 elif st.session_state.scene == "left_path":
     st.write("You take the path left, making your way past what looks like a small lake, with an island in the middle. There seems to be something there.")
-    
-    if st.button("Check the Island", on_click=set_scene, args=("island_chalice",)):
+    if st.button("Check the Island", on_click=go, args=("island_chalice",)):
         pass
-    
-    if st.button("Ignore the Island", on_click=set_scene, args=("path_to_house",)):
+    if st.button("Ignore the Island", on_click=go, args=("path_to_house",)):
         pass
 
 elif st.session_state.scene == "island_chalice":
     st.write("You walk into the lake, trudging forward through the waist-high mud and water. As you reach the small island, you spot what looks like a chalice placed on a small altar.")
-    
-    if st.button("Pick up the Chalice", on_click=set_scene, args=("chalice_pick",)):
+    if st.button("Pick up the Chalice", on_click=go, args=("chalice_pick",)):
         pass
-    
-    if st.button("Leave it", on_click=set_scene, args=("path_to_house",)):
+    if st.button("Leave it", on_click=go, args=("path_to_house",)):
         pass
 
 elif st.session_state.scene == "chalice_pick":
     st.write("You pick the chalice up. It smells sweet like roses. Do you drink from the chalice?")
     col1, col2 = st.columns(2)
-    
-    if col1.button("Yes, drink it", on_click=set_scene, args=("dead_from_chalice",)):
+    if col1.button("Yes, drink it", on_click=go, args=("dead_from_chalice",)):
         pass
-    if col2.button("No, don't drink", on_click=set_scene, args=("path_to_house",)):
+    if col2.button("No, don't drink", on_click=go, args=("path_to_house",)):
         st.write("You resist the urge and head back through the cold, muddy water.")
     
 # Separated the death logic into its own scene for cleaner navigation
@@ -125,14 +112,12 @@ elif st.session_state.scene == "dead_from_chalice":
         pass
 
 
-# Right path branch (cabin)
+# Right path branch (shed)
 elif st.session_state.scene == "right_path":
     st.write("As you walk along the right side of the path, you notice a small shed, well built, a little aged but standing strong.")
-    
-    if st.button("Go inside the cabin", on_click=set_scene, args=("cabin_inside",)):
+    if st.button("Go inside the cabin", on_click=go, args=("cabin_inside",)):
         pass
-    
-    if st.button("Ignore the cabin", on_click=set_scene, args=("path_to_house",)):
+    if st.button("Ignore the cabin", on_click=go, args=("path_to_house",)):
         pass
 
 elif st.session_state.scene == "cabin_inside":
@@ -140,13 +125,11 @@ elif st.session_state.scene == "cabin_inside":
     if st.button("Open the chest"):
         st.write("Before you can react, it lunges at you. You've been paralysed and the mimic attacks. You are dead.")
         play_sound("sounds/ds_go.wav")
-    
         if st.button("R to Restart", on_click=restart):
             pass
     if st.button("Don't open the chest"):
         st.write("You leave the cabin.")
-        
-        if st.button("Continue", on_click=set_scene, args=("path_to_house",)):
+        if st.button("Continue", on_click=go, args=("path_to_house",)):
             pass
 
 # Path to house
@@ -154,22 +137,18 @@ elif st.session_state.scene == "path_to_house":
     st.write("You continue walking down the path, it's still quite foggy but starting to appear within your view is a house. You approach the gate.")
     st.write("The house looks like something straight out of a horror movie... Do you enter the house?")
     col1, col2 = st.columns(2)
-    
-    if col1.button("Yes, enter", on_click=set_scene, args=("inside_house",)):
+    if col1.button("Yes, enter", on_click=go, args=("inside_house",)):
         pass
     if col2.button("No, don't enter"):
         st.write("A gas fills the air and you decide to go in anyway...")
-        
-        if st.button("Continue", on_click=set_scene, args=("inside_house",)):
+        if st.button("Continue", on_click=go, args=("inside_house",)):
             pass
 
 elif st.session_state.scene == "inside_house":
     st.write("You try the front door of the house, it's open. A panic overcomes you and then the front door slams shut. You notice two doors: one with a red ruby, one with a blue sapphire.")
-    
-    if st.button("Open Blue Door", on_click=set_scene, args=("blue_path",)):
+    if st.button("Open Blue Door", on_click=go, args=("blue_path",)):
         pass
-    
-    if st.button("Open Red Door", on_click=set_scene, args=("red_path",)):
+    if st.button("Open Red Door", on_click=go, args=("red_path",)):
         pass
 
 # Blue path
@@ -177,16 +156,13 @@ elif st.session_state.scene == "blue_path":
     st.write("You push the door open, and you're hit with a blast of light, and an aroma of meat, roasted vegetables and mead! A large banquet appears.")
     if st.button("Eat at the banquet"):
         st.write("You eat and feel satisfied. You spot a large covered painting. Do you unveil it?")
-        
-        if st.button("Unveil the painting", on_click=set_scene, args=("red_path",)):
+        if st.button("Unveil the painting", on_click=go, args=("red_path",)):
             play_sound("sounds/lotr.wav")
             st.write("A melody plays and gives you hope. You leave towards the Red Ruby Door.")
-        
-        if st.button("Don't unveil", on_click=set_scene, args=("red_path",)):
+        if st.button("Don't unveil", on_click=go, args=("red_path",)):
             st.write("You decide not to unveil it and head to the Red Ruby Door.")
     else:
-        
-        if st.button("Ignore the food", on_click=set_scene, args=("red_path",)):
+        if st.button("Ignore the food", on_click=go, args=("red_path",)):
             pass
 
 # Red path
@@ -196,60 +172,48 @@ elif st.session_state.scene == "red_path":
         st.write("You pick up the doll, feel a presence, the doll disappears, cabinet starts to close, you see a shadow... Two claps and you are dead.")
         play_sound("sounds/clap.wav")
         play_sound("sounds/myneck.wav")
-        
         if st.button("Restart", on_click=restart):
             pass
     if st.button("Close the cabinet"):
         st.write("You close the cabinet, proceed through the museum and head down into a basement where you spot a desk and a painting.")
         
-        # Combined buttons for better flow and fixed navigation
         col1, col2 = st.columns(2)
         if col1.button("Check the Painting"):
             st.write("A painting features a grotesque scene — nothing else here so you approach the desk.")
-            
-            if st.button("Go to Desk", on_click=set_scene, args=("desk",)):
+            if st.button("Go to Desk", on_click=go, args=("desk",)):
                 pass
-        
-        if col2.button("Check the Desk", on_click=set_scene, args=("desk",)):
+        if col2.button("Check the Desk", on_click=go, args=("desk",)):
             pass
 
 # Desk
 elif st.session_state.scene == "desk":
     st.write("As you walk over to the desk and examine it, you sift through the notes on the table — research notes on occult topics. Something falls and you spot a key by your foot. You open a drawer and find a book that has a face.")
-    
-    if st.button("Interact with the Book", on_click=set_scene, args=("book_interaction",)):
+    if st.button("Interact with the Book", on_click=go, args=("book_interaction",)):
         pass
 
 # Book interaction
 elif st.session_state.scene == "book_interaction":
     st.write("You stare at the book. You can open it from the Front, Back or Middle.")
     c1, c2, c3 = st.columns(3)
-    
-    if c1.button("Front", on_click=set_scene, args=("front_book",)):
+    if c1.button("Front", on_click=go, args=("front_book",)):
         pass
-    
-    if c2.button("Back", on_click=set_scene, args=("back_book",)):
+    if c2.button("Back", on_click=go, args=("back_book",)):
         pass
-    
-    if c3.button("Middle", on_click=set_scene, args=("middle_book",)):
+    if c3.button("Middle", on_click=go, args=("middle_book",)):
         pass
 
 elif st.session_state.scene == "front_book":
     st.write("You open the book from the front. It's mostly unintelligible. Do you check the back or the middle?")
-    
-    if st.button("Middle", on_click=set_scene, args=("middle_book",)):
+    if st.button("Middle", on_click=go, args=("middle_book",)):
         play_sound("sounds/pageflip.wav")
-    
-    if st.button("Back", on_click=set_scene, args=("back_book",)):
+    if st.button("Back", on_click=go, args=("back_book",)):
         play_sound("sounds/pageflip.wav")
 
 elif st.session_state.scene == "back_book":
     st.write("You open the book from the back. There are numerous symbols including a Leviathan Cross and the word 'Daemonium'.")
-    
-    if st.button("Front", on_click=set_scene, args=("front_book",)):
+    if st.button("Front", on_click=go, args=("front_book",)):
         play_sound("sounds/pageflip.wav")
-    
-    if st.button("Middle", on_click=set_scene, args=("middle_book",)):
+    if st.button("Middle", on_click=go, args=("middle_book",)):
         play_sound("sounds/pageflip.wav")
 
 elif st.session_state.scene == "middle_book":
@@ -258,13 +222,11 @@ elif st.session_state.scene == "middle_book":
     st.write("You look to your left, your partner asks if you're okay... As you close your eyes again, the story ends.")
     play_sound("sounds/gameover.wav")
     st.write("---\nThe End\n---\nThank you for playing and your help with this mini-project!")
-    
     if st.button("Restart", on_click=restart):
         pass
 
 # Fallback
 else:
     st.write("restarting.")
-    
     if st.button("Restart", on_click=restart):
         pass
