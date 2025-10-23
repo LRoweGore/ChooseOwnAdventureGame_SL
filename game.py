@@ -53,10 +53,12 @@ if st.session_state.scene == "start":
     st.header("Welcome")
     st.write("Welcome to Lewis' Mini Text Adventure Game!")
     st.write("Would you like to start a new adventure?")
+
+    if "start_clicked not in st.session_state:
+        st.session_state.start_clicked = False
     
     if st.button("Start New Adventure"):
-        st.session_state.scene = "wake_up"
-        st.session_state.history = []
+        st.session_state.start_clicked = True
         
     if st.button("Exit"):
         st.write("Journey another day then...")
