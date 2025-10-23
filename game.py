@@ -121,7 +121,6 @@ elif st.session_state.scene == "dead_from_chalice":
     st.write("You've been poisoned. You collapse to the floor in a heap, the cold, wet ground a momentary relief from the pain coursing through your body.")
     st.write ("You are Dead")
     play_sound("sounds/roc.wav")
-     for restart
     if st.button("R to Restart", on_click=restart):
         pass
 
@@ -141,7 +140,7 @@ elif st.session_state.scene == "cabin_inside":
     if st.button("Open the chest"):
         st.write("Before you can react, it lunges at you. You've been paralysed and the mimic attacks. You are dead.")
         play_sound("sounds/ds_go.wav")
-         for restart
+    
         if st.button("R to Restart", on_click=restart):
             pass
     if st.button("Don't open the chest"):
