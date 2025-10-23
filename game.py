@@ -95,6 +95,7 @@ elif st.session_state.scene == "island_chalice":
 elif st.session_state.scene == "chalice_pick":
     st.write("You pick the chalice up, as you examine the chalice, it appears to be intricately designed, a crown, a boy, and lions decorate it.")
     st.write("When the light catches it, the chalice glows gold. That's when you notice a liquid resides within it, you smell it, a sweet aroma, it smells like roses.")
+    st.write ("Do you drink from the chalice?")
     col1, col2 = st.columns(2)
     if col1.button("Yes, drink it", on_click=go, args=("dead_from_chalice",)):
         pass
