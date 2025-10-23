@@ -58,7 +58,7 @@ if st.session_state.scene == "start":
     st.write("Would you like to start a new adventure?")
     
     if st.button("Start New Adventure"):
-        st.session_state.next_scene = "wake up"
+        st.session_state.next_scene = "wake_up"
         st.session_state.history = []
     
     if st.button("No"):
