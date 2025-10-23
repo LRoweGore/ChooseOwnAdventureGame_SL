@@ -12,7 +12,7 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
-# Helper to play audio (Streamlit can embed audio widgets)
+# Helper to play audio (Streamlit embedded audio widgets)
 def play_sound(sound_relative_path):
     sound_path = resource_path(sound_relative_path)
     if os.path.exists(sound_path):
@@ -25,8 +25,6 @@ def play_sound(sound_relative_path):
         st.write("(Sound not found)")
 
 # Scene: start
-# Removed the unnecessary 'next_scene' logic cleanup here as we use set_scene() now
-
 # Init session state
 if "scene" not in st.session_state:
     st.session_state.scene = "start"
@@ -34,21 +32,21 @@ if "scene" not in st.session_state:
 if "history" not in st.session_state:
     st.session_state.history = []
 
-# Navigation helper (FIXED: Added st.rerun() and renamed to set_scene for clarity)
+# Navigation helper 
 def set_scene(next_scene, note=None):
     # Only append history if it's a real scene change
     if st.session_state.scene != next_scene:
         st.session_state.history.append((st.session_state.scene, note))
     st.session_state.scene = next_scene
-    st.rerun() # <-- CRITICAL FIX
+    st.rerun() 
 
-# Restart helper (FIXED: Added st.rerun())
+
 def restart():
     st.session_state.scene = "start"
     st.session_state.history = []
-    st.rerun() # <-- CRITICAL FIX
+    st.rerun() 
 
-# Small utility to show paragraphs with optional delays (non-blocking)
+# Small utility to show paragraphs with optional delays
 def write_paragraphs(paragraphs):
     for p in paragraphs:
         st.write(p)
@@ -69,14 +67,14 @@ if st.session_state.scene == "start":
         st.write("Journey another day then...")
         
 
-# Scene: wake_up -> crossroads
+ #wake_up > crossroads
 elif st.session_state.scene == "wake_up":
     st.write("You awake in your car, and as you prepare to start the car up and leave, you peer over at your fuel, it's empty... not an ideal situation. With no idea where you are, you decide to leave the car and see a dirt path ahead of you, you follow it.")
     
     if st.button("Continue", on_click=set_scene, args=("crossroads",)):
         pass
 
-# Scene: crossroads
+#crossroads
 elif st.session_state.scene == "crossroads":
     st.header("Crossroads")
     st.write("As you continue following the path, you approach a crossroads, do you go left or right?")
@@ -88,7 +86,7 @@ elif st.session_state.scene == "crossroads":
     if col2.button("Right", on_click=set_scene, args=("right_path",)):
         pass
 
-# Left path branch (lake -> island -> chalice or path_to_house)
+# Left path branch (lake > island > chalice or path_to_house)
 elif st.session_state.scene == "left_path":
     st.write("You take the path left, making your way past what looks like a small lake, with an island in the middle. There seems to be something there.")
     
@@ -110,10 +108,9 @@ elif st.session_state.scene == "island_chalice":
 elif st.session_state.scene == "chalice_pick":
     st.write("You pick the chalice up. It smells sweet like roses. Do you drink from the chalice?")
     col1, col2 = st.columns(2)
-    # FIX: Direct to the death scene with on_click
+    
     if col1.button("Yes, drink it", on_click=set_scene, args=("dead_from_chalice",)):
         pass
-    # FIX: Direct to the next scene with on_click, and display the note for the current run
     if col2.button("No, don't drink", on_click=set_scene, args=("path_to_house",)):
         st.write("You resist the urge and head back through the cold, muddy water.")
     
@@ -130,7 +127,7 @@ elif st.session_state.scene == "dead_from_chalice":
         pass
 
 
-# Right path branch (shed)
+# Right path branch (cabin)
 elif st.session_state.scene == "right_path":
     st.write("As you walk along the right side of the path, you notice a small shed, well built, a little aged but standing strong.")
     
