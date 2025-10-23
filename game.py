@@ -70,11 +70,10 @@ elif st.session_state.scene == "wake_up":
 elif st.session_state.scene == "crossroads":
     st.header("Crossroads")
     st.write("As you continue following the path, you approach a crossroads, do you go left or right?")
-    #col1, col2 = st.columns(2)
+    col1, col2 = st.columns(2)
     if st.button("Left", on_click=go, args=("left_path",)):
         pass
     if st.button("Right", on_click=go, args=("right_path",)):
-        pass
 
 # Left path branch (lake > island > chalice or path_to_house)
 elif st.session_state.scene == "left_path":
