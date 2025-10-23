@@ -3,9 +3,6 @@ import time
 import os
 import sys
 
-# Scene: start
-if "next_scene" in st.session_state:
-    st.session_state.scene = st.session_state.pop("next_scene")
     
 # Helper to get resource path (works with local files and PyInstaller)
 def resource_path(relative_path):
@@ -26,6 +23,10 @@ def play_sound(sound_relative_path):
             st.write(f"(Could not play sound: {e})")
     else:
         st.write("(Sound not found)")
+
+# Scene: start
+if "next_scene" in st.session_state:
+    st.session_state.scene = st.session_state.pop("next_scene")
 
 # Init session state
 if "scene" not in st.session_state:
