@@ -59,7 +59,6 @@ if st.session_state.scene == "start":
     st.write("Welcome to Lewis' Mini Text Adventure Game!")
     st.write("Would you like to start a new adventure?")
     
-    for immediate scene transition
     if st.button("Start New Adventure", on_click=set_scene, args=("wake_up",)):
         st.session_state.history = []
     
