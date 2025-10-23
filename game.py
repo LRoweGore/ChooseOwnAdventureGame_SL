@@ -84,7 +84,7 @@ elif st.session_state.scene == "left_path":
     if st.button("Ignore the Island", on_click=go, args=("ignore_island",)):
         pass
 
-elif st.session_state.scene == "ignore_island"):
+elif (st.session_state.scene == "ignore_island"):
     st.write ("You decide you don't want to check the island and continue forward on the path.")
     if st.button("Continue", on_click=go, args=("path_to_house",)):
         pass
