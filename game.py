@@ -97,13 +97,14 @@ elif st.session_state.scene == "chalice_pick":
     st.write("You pick the chalice up. It smells sweet like roses. Do you drink from the chalice?")
     col1, col2 = st.columns(2)
     if col1.button("Yes, drink it"):
-        st.write("Unable to resist the sweet smell, you drink from the chalice, gulping down every last drop. As the last drop falls down your throat, you take a moment to enjoy the tasty remnants on your taste buds.")
-        st.write("You drop the chalice and it clatters as you drop it to the ground.")
-        st.write("Your eyes begin to burn, and you struggle to catch your breath as your airways gradually close in, clawing at your throat.")
+        st.write("Unable to resist the sweet smell, you drink from the chalice, gulping down every last drop. As the last drop rolls down your throat, you take a moment, smacking your lips savouring the last remnants on your taste buds.")
+        st.write("Suddenly, you drop the chalice and it clatters as you drop it to the ground.")
+        st.write("Your eyes begin to burn, and you struggle to catch your breath as your airways gradually close, you begin to panic, and start clawing at your throat.")
         st.session_state.scene = "dead_from_chalice"
-        play_sound("sounds/roc.wav")
     elif st.session_state.scene == "dead_from_chalice":
-        st.write("You've been poisoned. You collapse to the floor... and you're dead.")
+        st.write("You've been poisoned. You collapse to the floor in a heap, the cold, wet ground a momentary relief from the pain coursing through your body.
+        st.write ("You are Dead")
+        play_sound("sounds/roc.wav")
         if st.button("R to Restart"):
             restart()
     if col2.button("No, don't drink"):
