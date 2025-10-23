@@ -63,7 +63,7 @@ if st.session_state.scene == "start":
 
 # Scene: wake_up -> crossroads
 elif st.session_state.scene == "wake_up":
-    st.write("You awake in your car, and as you prepare to start the car up and leave, you peer over at your fuel, it's empty... not an ideal situation. With no idea where you are, you decide to leave the car and see a dirt path ahead of you, you follow it.")
+    st.write("You awake in your car, and as you prepare to start the car up and leave, you peer over at your fuel, it's empty... not an ideal situation. With no clue where you are, you decide to leave the car and see a dirt path ahead of you, you follow it.")
     if st.button("Continue", on_click=go, args=("crossroads",)):
         pass
 
@@ -87,7 +87,6 @@ elif st.session_state.scene == "left_path":
 
 elif st.session_state.scene == "island_chalice":
     st.write("You walk into the lake, trudging forward through the waist-high mud and water. As you reach the small island, you spot what looks like a chalice placed on a small altar.")
-    st.write("When the light catches it, the chalice glows gold. That's when you notice a liquid resides within it, you smell it, a sweet aroma, it smells like roses.")
     if st.button("Pick up the Chalice", on_click=go, args=("chalice_pick",)):
         pass
     if st.button("Leave it", on_click=go, args=("path_to_house",)):
@@ -95,6 +94,7 @@ elif st.session_state.scene == "island_chalice":
 
 elif st.session_state.scene == "chalice_pick":
     st.write("You pick the chalice up, as you examine the chalice, it appears to be intricately designed, a crown, a boy, and lions decorate it.")
+    st.write("When the light catches it, the chalice glows gold. That's when you notice a liquid resides within it, you smell it, a sweet aroma, it smells like roses.")
     col1, col2 = st.columns(2)
     if col1.button("Yes, drink it", on_click=go, args=("dead_from_chalice",)):
         pass
