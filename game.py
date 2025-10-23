@@ -87,26 +87,27 @@ elif st.session_state.scene == "left_path":
 
 elif st.session_state.scene == "island_chalice":
     st.write("You walk into the lake, trudging forward through the waist-high mud and water. As you reach the small island, you spot what looks like a chalice placed on a small altar.")
+    st.write("When the light catches it, the chalice glows gold. That's when you notice a liquid resides within it, you smell it, a sweet aroma, it smells like roses.)
     if st.button("Pick up the Chalice", on_click=go, args=("chalice_pick",)):
         pass
     if st.button("Leave it", on_click=go, args=("path_to_house",)):
         pass
 
 elif st.session_state.scene == "chalice_pick":
-    st.write("You pick the chalice up. It smells sweet like roses. Do you drink from the chalice?")
+    st.write("You pick the chalice up, as you examine the chalice, it appears to be intricately designed, a crown, a boy, and lions decorate it.")
     col1, col2 = st.columns(2)
     if col1.button("Yes, drink it", on_click=go, args=("dead_from_chalice",)):
         pass
     if col2.button("No, don't drink", on_click=go, args=("path_to_house",)):
-        st.write("You resist the urge and head back through the cold, muddy water.")
+        st.write("You hesitantly put the chalice down resisting the urge of the sweet aroma, and head back through the cold, muddy water.")
     
 # Separated the death logic into its own scene for cleaner navigation
 elif st.session_state.scene == "dead_from_chalice":
     st.write("Unable to resist the sweet smell, you drink from the chalice, gulping down every last drop. As the last drop rolls down your throat, you take a moment, smacking your lips savouring the last remnants on your taste buds.")
     st.write("Suddenly, you drop the chalice and it clatters as you drop it to the ground.")
     st.write("Your eyes begin to burn, and you struggle to catch your breath as your airways gradually close, you begin to panic, and start clawing at your throat.")
-    st.write("You've been poisoned. You collapse to the floor in a heap, the cold, wet ground a momentary relief from the pain coursing through your body.")
-    st.write ("You are Dead")
+    st.write("You've been poisoned. You collapse to the floor in a heap, the cold, wet ground a momentary relief from the pain coursing through your body. You gasp your last breath.")
+    st.write ("You are Dead.")
     play_sound("sounds/roc.wav")
     if st.button("R to Restart", on_click=restart):
         pass
