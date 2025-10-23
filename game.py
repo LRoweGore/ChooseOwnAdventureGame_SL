@@ -89,9 +89,10 @@ elif st.session_state.scene == "left_path":
 elif (st.session_state.scene == "ignore_island"):
     st.write ("You decide you don't want to check the island and continue forward on the path.")
     col1, col2 = st.columns(2)
-    if st.button("Continue", on_click=go, args=("path_to_house",)):
+    if col2.button("Continue", on_click=go, args=("path_to_house",)):
         pass
-    if st.button("Take the right path", on_click=go, args=("right_path",)):
+        
+    if col2.button("Take the right path", on_click=go, args=("right_path",)):
         pass
 
 elif st.session_state.scene == "island_chalice":
