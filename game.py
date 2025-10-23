@@ -45,12 +45,12 @@ def write_paragraphs(paragraphs):
     for p in paragraphs:
         st.write(p)
 
-# App UI
-st.title("Lewis' Mini Text Adventure Game")
-
 # Scene: start
 if "next_scene" in st.session_state:
     st.session_state.scene = st.session_state.pop("next_scene")
+
+# App UI
+st.title("Lewis' Mini Text Adventure Game")
 
 if st.session_state.scene == "start":
     st.header("Welcome")
