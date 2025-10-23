@@ -50,7 +50,6 @@ def write_paragraphs(paragraphs):
 st.title("Lewis' Mini Text Adventure Game")
 
 if st.session_state.scene == "start":
-    st.header("Welcome")
     st.write("Welcome to Lewis' Mini Text Adventure Game!")
     st.write("Would you like to start a new adventure?")
     
@@ -61,7 +60,7 @@ if st.session_state.scene == "start":
         st.write("Journey another day then...")
         
 
-# Scene: wake_up -> crossroads
+# Scene: wake_up > crossroads
 elif st.session_state.scene == "wake_up":
     st.write("You awake in your car, and as you prepare to start the car up and leave, you peer over at your fuel, it's empty... not an ideal situation. With no clue where you are, you decide to leave the car and see a dirt path ahead of you, you follow it.")
     if st.button("Continue", on_click=go, args=("crossroads",)):
@@ -77,7 +76,7 @@ elif st.session_state.scene == "crossroads":
     if col2.button("Right", on_click=go, args=("right_path",)):
         pass
 
-# Left path branch (lake -> island -> chalice or path_to_house)
+# Left path branch (lake > island > chalice or path_to_house)
 elif st.session_state.scene == "left_path":
     st.write("You take the path left, making your way past what looks like a small lake, with an island in the middle. There seems to be something there.")
     if st.button("Check the Island", on_click=go, args=("island_chalice",)):
@@ -136,6 +135,7 @@ elif st.session_state.scene == "cabin_inside":
 
 # Path to house
 elif st.session_state.scene == "path_to_house":
+    st.write("You decide you don't want to check the island and continue forward on the path.")
     st.write("You continue walking down the path, it's still quite foggy but starting to appear within your view is a house. You approach the gate.")
     st.write("The house looks like something straight out of a horror movie... Do you enter the house?")
     col1, col2 = st.columns(2)
