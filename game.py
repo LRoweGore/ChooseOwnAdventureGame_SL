@@ -98,7 +98,7 @@ elif st.session_state.scene == "chalice_pick":
     col1, col2 = st.columns(2)
     if col1.button("Yes, drink it"):
         st.session_state.scene = "dead_from_chalice"
-    elif st.session_state.scene == "dead_from_chalice":
+    if st.session_state.scene == "dead_from_chalice":
         st.write("Unable to resist the sweet smell, you drink from the chalice, gulping down every last drop. As the last drop rolls down your throat, you take a moment, smacking your lips savouring the last remnants on your taste buds.")
         st.write("Suddenly, you drop the chalice and it clatters as you drop it to the ground.")
         st.write("Your eyes begin to burn, and you struggle to catch your breath as your airways gradually close, you begin to panic, and start clawing at your throat.")
