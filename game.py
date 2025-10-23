@@ -3,6 +3,10 @@ import time
 import os
 import sys
 
+# Scene: start
+if "next_scene" in st.session_state:
+    st.session_state.scene = st.session_state.pop("next_scene")
+    
 # Helper to get resource path (works with local files and PyInstaller)
 def resource_path(relative_path):
     try:
@@ -44,10 +48,6 @@ def restart():
 def write_paragraphs(paragraphs):
     for p in paragraphs:
         st.write(p)
-
-# Scene: start
-if "next_scene" in st.session_state:
-    st.session_state.scene = st.session_state.pop("next_scene")
 
 # App UI
 st.title("Lewis' Mini Text Adventure Game")
