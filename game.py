@@ -34,13 +34,11 @@ if "history" not in st.session_state:
 def go(next_scene, note=None):
     st.session_state.history.append((st.session_state.scene, note))
     st.session_state.scene = next_scene
-    st.experimental_rerun()
 
 # Restart helper
 def restart():
     st.session_state.scene = "start"
     st.session_state.history = []
-    st.experimental_rerun()
 
 # Small utility to show paragraphs with optional delays (non-blocking)
 def write_paragraphs(paragraphs):
