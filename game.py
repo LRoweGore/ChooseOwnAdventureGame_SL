@@ -81,7 +81,12 @@ elif st.session_state.scene == "left_path":
     st.write("You take the path left, making your way past what looks like a small lake, with an island in the middle. There seems to be something there.")
     if st.button("Check the Island", on_click=go, args=("island_chalice",)):
         pass
-    if st.button("Ignore the Island", on_click=go, args=("path_to_house",)):
+    if st.button("Ignore the Island", on_click=go, args=("ignore_island",)):
+        pass
+
+elif st.session_state.scene == "ignore_island"):
+    st.write ("You decide you don't want to check the island and continue forward on the path.")
+    if st.button("Continue", on_click=go, args=("path_to_house",)):
         pass
 
 elif st.session_state.scene == "island_chalice":
@@ -135,7 +140,6 @@ elif st.session_state.scene == "cabin_inside":
 
 # Path to house
 elif st.session_state.scene == "path_to_house":
-    st.write("You decide you don't want to check the island and continue forward on the path.")
     st.write("You continue walking down the path, it's still quite foggy but starting to appear within your view is a house. You approach the gate.")
     st.write("The house looks like something straight out of a horror movie... Do you enter the house?")
     col1, col2 = st.columns(2)
