@@ -53,10 +53,12 @@ if st.session_state.scene == "start":
     st.header("Welcome")
     st.write("Welcome to Lewis' Mini Text Adventure Game!")
     st.write("Would you like to start a new adventure?")
-    col1, col2 = st.columns(2)
-    if col1.button("Start New Adventure"):
+    
+    if st.button("Start New Adventure"):
         st.session_state.scene = "wake_up"
-    if col2.button("Exit"):
+        st.session_state.history = []
+        
+    if st.button("Exit"):
         st.write("Journey another day then...")
         restart()
 
