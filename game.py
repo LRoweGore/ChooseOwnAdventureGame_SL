@@ -81,15 +81,17 @@ elif st.session_state.scene == "crossroads":
 # Left path branch (lake > island > chalice or path_to_house)
 elif st.session_state.scene == "left_path":
     st.write("You take the path left, making your way past what looks like a small lake, with an island in the middle. There seems to be something there.")
-    if st.button("Check the Island", on_click=go, args=("island_chalice",)):
+    col1, col2 = st.columns(2)
+    if col1.button("Check the Island", on_click=go, args=("island_chalice",)):
         pass
-    if st.button("Ignore the Island", on_click=go, args=("ignore_island",)):
+        
+    if col2.button("Ignore the Island", on_click=go, args=("ignore_island",)):
         pass
 
 elif (st.session_state.scene == "ignore_island"):
     st.write ("You decide you don't want to check the island and continue forward on the path.")
     col1, col2 = st.columns(2)
-    if col2.button("Continue", on_click=go, args=("path_to_house",)):
+    if col1.button("Continue", on_click=go, args=("path_to_house",)):
         pass
         
     if col2.button("Take the right path", on_click=go, args=("right_path",)):
