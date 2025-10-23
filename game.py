@@ -86,7 +86,7 @@ elif st.session_state.scene == "left_path":
         pass
 
 elif st.session_state.scene == "island_chalice":
-    st.write("You walk into the lake, trudging forward through the waist-high mud and water. As you reach the small island, you spot what looks like a chalice placed on a small altar.")
+    st.write("You walk into the lake, trudging forward through the waist-high mud and water. As you reach the small island, you spot what looks like a chalice placed on a small altar. You move towards it.")
     if st.button("Pick up the Chalice", on_click=go, args=("chalice_pick",)):
         pass
     if st.button("Leave it", on_click=go, args=("path_to_house",)):
