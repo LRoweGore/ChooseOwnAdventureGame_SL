@@ -74,6 +74,7 @@ elif st.session_state.scene == "crossroads":
     if st.button("Left", on_click=go, args=("left_path",)):
         pass
     if st.button("Right", on_click=go, args=("right_path",)):
+        pass
 
 # Left path branch (lake > island > chalice or path_to_house)
 elif st.session_state.scene == "left_path":
