@@ -59,7 +59,7 @@ if st.session_state.scene == "start":
         st.session_state.scene = "wake_up"
     if col2.button("Exit"):
         st.write("Journey another day then...")
-            restart()
+        restart()
 
 # Scene: wake_up -> crossroads
 elif st.session_state.scene == "wake_up":
