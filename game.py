@@ -47,7 +47,6 @@ def write_paragraphs(paragraphs):
 
 # App UI
 st.title("Lewis' Mini Text Adventure Game")
-st.markdown("A browser-friendly port of the original console game. Use the buttons to make choices.")
 
 # Scene: start
 if st.session_state.scene == "start":
@@ -98,14 +97,20 @@ elif st.session_state.scene == "chalice_pick":
     st.write("You pick the chalice up. It smells sweet like roses. Do you drink from the chalice?")
     col1, col2 = st.columns(2)
     if col1.button("Yes, drink it"):
-        st.write("You've been poisoned. You collapse to the floor... You are Dead.")
+        st.write("Unable to resist the sweet smell, you drink from the chalice, gulping down every last drop. As the last drop falls down your throat, you take a moment to enjoy the tasty remnants on your taste buds.")
+        st.write("You drop the chalice and it clatters as you drop it to the ground.")
+        st.write("Your eyes begin to burn, and you struggle to catch your breath as your airways gradually close in, clawing at your throat.")
+        st.session_state.scene = "dead_from_chalice"
         play_sound("sounds/roc.wav")
+    elif st.session_state.scene == "dead_from_chalice":
+        st.write("You've been poisoned. You collapse to the floor... and you're dead.")
         if st.button("R to Restart"):
             restart()
     if col2.button("No, don't drink"):
+        st.session_state.scene = "path_to_house"
         st.write("You resist the urge and head back through the cold, muddy water.")
-        if st.button("Continue"):
-            go("path_to_house")
+    
+
 
 # Right path branch (shed)
 elif st.session_state.scene == "right_path":
