@@ -141,12 +141,13 @@ elif st.session_state.scene == "right_path":
 
 elif st.session_state.scene == "cabin_inside":
     st.write("You go inside the wooden cabin, and inside you notice a number of old tools littered about. On a workbench, opposite the exit, you notice a chest on the table.")
-    if st.button("Open the chest"):
+    col1, col2 = st.columns(2)
+    if col1.button("Open the chest"):
         st.write("Before you can react, it lunges at you. You've been paralysed and the mimic attacks. You are dead.")
         play_sound("sounds/ds_go.wav")
         if st.button("R to Restart", on_click=restart):
             pass
-    if st.button("Don't open the chest"):
+    if col2.button("Don't open the chest"):
         st.write("You leave the cabin.")
         if st.button("Continue", on_click=go, args=("path_to_house",)):
             pass
