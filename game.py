@@ -50,7 +50,6 @@ def write_paragraphs(paragraphs):
 st.title("Lewis' Mini Text Adventure Game")
 
 if st.session_state.scene == "start":
-    st.write("Welcome to Lewis' Mini Text Adventure Game!")
     st.write("Would you like to start a new adventure?")
     
     if st.button("Start New Adventure", on_click=go, args=("wake_up",)):
@@ -99,9 +98,10 @@ elif (st.session_state.scene == "ignore_island"):
 
 elif st.session_state.scene == "island_chalice":
     st.write("You walk into the lake, trudging forward through the waist-high mud and water. As you reach the small island, you spot what looks like a chalice placed on a small altar. You move towards it.")
-    if st.button("Pick up the Chalice", on_click=go, args=("chalice_pick",)):
+    col1, col2 = st.columns(2)
+    if col1.button("Pick up the Chalice", on_click=go, args=("chalice_pick",)):
         pass
-    if st.button("Leave it", on_click=go, args=("path_to_house",)):
+    if col2.button("Leave it", on_click=go, args=("path_to_house",)):
         pass
 
 elif st.session_state.scene == "chalice_pick":
