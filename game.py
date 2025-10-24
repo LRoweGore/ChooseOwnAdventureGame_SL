@@ -128,10 +128,11 @@ elif st.session_state.scene == "dead_from_chalice":
 
 # Right path branch (shed)
 elif st.session_state.scene == "right_path":
-    st.write("As you walk along the right side of the path, you notice a small shed, well built, a little aged but standing strong.")
-    if st.button("Go inside the cabin", on_click=go, args=("cabin_inside",)):
+    st.write("As you walk along the right side of the path, you notice a small shed, well built, and a little aged but standing strong.")
+    col1, cold2 = st.columns(2)
+    if col1.button("Go inside the cabin", on_click=go, args=("cabin_inside",)):
         pass
-    if st.button("Ignore the cabin", on_click=go, args=("path_to_house",)):
+    if col2.button("Ignore the cabin", on_click=go, args=("path_to_house",)):
         pass
 
 elif st.session_state.scene == "cabin_inside":
