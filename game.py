@@ -142,7 +142,7 @@ elif st.session_state.scene == "right_path":
 elif st.session_state.scene == "cabin_inside":
     st.write("You go inside the wooden cabin, and inside you notice a number of old tools littered about. On a workbench, opposite the exit, you notice a chest on the table.")
     col1, col2 = st.columns(2)
-    if col1.button("Open the chest", on_click=go, args=("cabin_inside",)):
+    if col1.button("Open the chest", on_click=go, args=("chest_death",)):
         pass
     
     if col2.button("Don't open the chest"):
