@@ -159,7 +159,8 @@ elif st.session_state.scene == "chest_death":
 # Path to house
 elif st.session_state.scene == "path_to_house":
     st.write("You continue walking down the path, it's still quite foggy but you can make out what appears to be a house. It is protected by a large gate. You approach the gate.")
-    st.write("As you approach a gust of wind clears the fog, and the house becomes more visible. The house looks like something straight out of a horror movie, a rotting wooden structure, the windows dark and empty, vines encompassing most of the house. The air feels heavy now, and you have a decision to make. Do you enter the house?")
+    st.write("As you approach a gust of wind clears the fog, and the house becomes more visible. The house looks like something straight out of a horror movie, a rotting wooden structure, the windows dark and empty, vines encompassing most of the house. The air feels heavy now, and you have a decision to make.")
+    st.write("Do you enter the house?")
     col1, col2 = st.columns(2)
     if col1.button("Yes, enter", on_click=go, args=("inside_house",)):
         pass
