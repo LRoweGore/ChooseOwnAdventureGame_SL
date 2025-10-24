@@ -143,7 +143,8 @@ elif st.session_state.scene == "cabin_inside":
     st.write("You go inside the wooden cabin, and inside you notice a number of old tools littered about. On a workbench, opposite the exit, you notice a chest on the table.")
     col1, col2 = st.columns(2)
     if col1.button("Open the chest"):
-        st.write ("You reach toward the chest, and as your hand brushes the chest, before you have any time to react, it lunges at you. Its teeth sink into your arm and within seconds, you can no longer move your body. You've been paralysed and feel no pain either."
+        st.session_state.scene == "chest_death":
+        st.write ("You reach toward the chest, and as your hand brushes the chest, before you have any time to react, it lunges at you. Its teeth sink into your arm and within seconds, you can no longer move your body. You've been paralysed and feel no pain either.")
         st.write ("You fall to the floor, and the mimic chomps away at your flesh. What was a minute feels like an eternity, then everything turns to black. You are dead.")
         play_sound("sounds/ds_go.wav")
         if st.button("R to Restart", on_click=restart):
