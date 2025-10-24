@@ -101,6 +101,7 @@ elif st.session_state.scene == "island_chalice":
     col1, col2 = st.columns(2)
     if col1.button("Pick up the Chalice", on_click=go, args=("chalice_pick",)):
         pass
+        
     if col2.button("Leave it", on_click=go, args=("path_to_house",)):
         pass
 
@@ -109,8 +110,10 @@ elif st.session_state.scene == "chalice_pick":
     st.write("When the light catches it, the chalice glows gold. That's when you notice a liquid resides within it, you smell it, a sweet aroma, it smells like roses.")
     st.write ("Do you drink from the chalice?")
     col1, col2 = st.columns(2)
+    
     if col1.button("Yes, drink it", on_click=go, args=("dead_from_chalice",)):
         pass
+        
     if col2.button("No, don't drink", on_click=go, args=("path_to_house",)):
         st.write("You hesitantly put the chalice down resisting the urge of the sweet aroma, and head back through the cold, muddy water.")
     
@@ -129,9 +132,10 @@ elif st.session_state.scene == "dead_from_chalice":
 # Right path branch (shed)
 elif st.session_state.scene == "right_path":
     st.write("As you walk along the right side of the path, you notice a small shed, well built, and a little aged but standing strong.")
-    col1, cold2 = st.columns(2)
+    col1, col2 = st.columns(2)
     if col1.button("Go inside the cabin", on_click=go, args=("cabin_inside",)):
         pass
+        
     if col2.button("Ignore the cabin", on_click=go, args=("path_to_house",)):
         pass
 
