@@ -106,17 +106,26 @@ elif st.session_state.scene == "island_chalice":
         pass
 
 elif st.session_state.scene == "chalice_pick":
-    st.write("You pick the chalice up, as you examine the chalice, it appears to be intricately designed, a crown, a boy, and lions decorate it.")
-    st.write("When the light catches it, the chalice glows gold. That's when you notice a liquid resides within it, you smell it, a sweet aroma, it smells like roses.")
-    st.write ("Do you drink from the chalice?")
-    col1, col2 = st.columns(2)
+     st.write("You pick the chalice up, as you examine the chalice, it appears to be intricately designed, a crown, a boy, and lions decorate it.")
+     st.write("When the light catches it, the chalice glows gold. That's when you notice a liquid resides within it, you smell it, a sweet aroma, it smells like roses.")
+     st.write ("Do you drink from the chalice?")
+     col1, col2 = st.columns(2)
     
     if col1.button("Yes, drink it", on_click=go, args=("dead_from_chalice",)):
         pass
         
     if col2.button("No, don't drink", on_click=go, args=("",)):
-        st.write("You hesitantly put the chalice down resisting the urge of the sweet aroma, and head back through the cold, muddy water.")
-    
+        pass
+
+elif st.session_state.scene == "chalice_dont_drink":
+     st.write("You hesitantly put the chalice down resisting the urge of the sweet aroma, and head back through the cold, muddy water.")
+     col1, col2 = st.columns(2)
+
+    if col1.button ("Continue on main path", on_click_go, args=("path to house",)):
+        pass
+
+    if col2.button ("Take the right path", on_click_go=go, args=("right_path",)):
+        pass
 
 elif st.session_state.scene == "chalice_leave":
      st.write("You ignore the temptation to pick up the Chalice, and walk back through the cold, muddy water.")
