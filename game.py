@@ -119,6 +119,7 @@ elif st.session_state.scene == "chalice_pick":
 
 elif st.session_state.scene == "chalice_dont_drink":
      st.write("You hesitantly put the chalice down resisting the urge of the sweet aroma, and head back through the cold, muddy water.")
+    
      col1, col2 = st.columns(2)
 
     if col1.button ("Continue on main path", on_click=go, args=("path to house",)):
