@@ -120,7 +120,12 @@ elif st.session_state.scene == "chalice_pick":
 
 elif st.session_state.scene == "chalice_leave":
      st.write("You ignore the temptation to pick up the Chalice, and walk back through the cold, muddy water.")
-     st.button("Continue", on_click=go, args=("
+     col1, col2 = st.columns(2)
+     if col1.button("Continue", on_click=go, args=("path_to_house",)):
+         pass
+
+     if col2.button("Take right path", on_click=go, args=("right_path",)):
+         pass
     
 # Separated the death logic into its own scene for cleaner navigation
 elif st.session_state.scene == "dead_from_chalice":
