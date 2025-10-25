@@ -121,10 +121,10 @@ elif st.session_state.scene == "chalice_dont_drink":
      st.write("You hesitantly put the chalice down resisting the urge of the sweet aroma, and head back through the cold, muddy water.")
      col1, col2 = st.columns(2)
 
-    if col1.button ("Continue on main path", on_click_go, args=("path to house",)):
+    if col1.button ("Continue on main path", on_click=go, args=("path to house",)):
         pass
 
-    if col2.button ("Take the right path", on_click_go=go, args=("right_path",)):
+    if col2.button ("Take the right path", on_click=go, args=("right_path",)):
         pass
 
 elif st.session_state.scene == "chalice_leave":
