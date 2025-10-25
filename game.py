@@ -122,7 +122,7 @@ elif st.session_state.scene == "chalice_dont_drink":
     
      col1, col2 = st.columns(2)
 
-    if col1.button ("Continue on main path", on_click=go, args=("path to house",)):
+    if col1.button ("Continue on main path", on_click=go, args=("path_to_house",)):
         pass
 
     if col2.button ("Take the right path", on_click=go, args=("right_path",)):
