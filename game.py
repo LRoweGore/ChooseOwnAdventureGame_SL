@@ -102,7 +102,8 @@ elif st.session_state.scene == "island_chalice":
     if col1.button("Pick up the Chalice", on_click=go, args=("chalice_pick",)):
         pass
         
-    if col2.button("Leave it", on_click=go, args=("path_to_house",)):
+    if col2.button("Leave it", on_click=go, args=("",)):
+        st.write("You ignore the temptation to pick up the Chalice, and walk back through the cold, muddy water.")
         pass
 
 elif st.session_state.scene == "chalice_pick":
