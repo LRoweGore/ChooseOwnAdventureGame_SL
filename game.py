@@ -114,7 +114,7 @@ elif st.session_state.scene == "chalice_pick":
     if col1.button("Yes, drink it", on_click=go, args=("dead_from_chalice",)):
         pass
         
-    if col2.button("No, don't drink", on_click=go, args=("",)):
+    if col2.button("No, don't drink", on_click=go, args=("chalice_dont_drink",)):
         pass
 
 elif st.session_state.scene == "chalice_dont_drink":
