@@ -120,6 +120,7 @@ elif st.session_state.scene == "chalice_pick":
 
 elif st.session_state.scene == "chalice_leave":
    st.write("You ignore the temptation to pick up the Chalice, and walk back through the cold, muddy water.")
+    st.button("Continue", on_click=go, args=("
     
 # Separated the death logic into its own scene for cleaner navigation
 elif st.session_state.scene == "dead_from_chalice":
