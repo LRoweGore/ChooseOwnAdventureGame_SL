@@ -169,11 +169,9 @@ elif st.session_state.scene == "cabin_inside":
         pass
             
 elif st.session_state.scene =="chest_leave":
-     st.write("You get a tingle down your spine which tells you not to open the chest, and you leave the cabin.")
+     st.write("You get a tingle down your spine which instinctively encourages you not to open the chest, and you leave the cabin, back down the path.")
      if st.button("Continue", on_click=go, args=("path_to_house",)):
-         pass
-    
-    
+         pass      
             
 elif st.session_state.scene == "chest_death":
         st.write ("You reach toward the chest, and as your hand brushes the chest, before you have any time to react, it lunges at you. Its teeth sink into your arm and within seconds, you can no longer move your body. You've been paralysed and feel no pain either.")
@@ -190,8 +188,11 @@ elif st.session_state.scene == "path_to_house":
     col1, col2 = st.columns(2)
     if col1.button("Yes, enter", on_click=go, args=("inside_house",)):
         pass
-    if col2.button("No, don't enter"):
-        st.write("Your initial thoughts to turn away are probably correct, but you suddenly feel a looming presence.")
+    if col2.button("No, don't enter", on_click=go, args=("dont_enter",)):
+        pass
+
+elif st.session_state.scene =="dont_enter":
+    st.write("Your initial thoughts to turn away are probably correct, but you suddenly feel a looming presence.")
         st.write ("Suddenly, there's a loud clang to your left where a rusty intercom sits, and a yellow gas spills out and fills the space around you.")
         st.write ("You breathe it in, and before you can react, you're compelled to completely change your mind about entering the house, you walk towards the house as if under a spell... reminds you of a movie")
         st.write ("You try the front door of the house, it's open. You take a few steps forward inside, and a chill wind hits you.")
