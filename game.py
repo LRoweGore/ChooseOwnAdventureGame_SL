@@ -159,7 +159,7 @@ elif st.session_state.scene == "right_path":
     if col2.button("Ignore the cabin", on_click=go, args=("ignore_cabin_path_to_house",)):
         pass
 
-elif st.session_state.scene =="ignore_cabin_path_to_house",)):
+elif st.session_state.scene =="ignore_cabin_path_to_house":
         pass
 
 elif st.session_state.scene == "cabin_inside":
