@@ -161,7 +161,7 @@ elif st.session_state.scene == "right_path":
         pass
 
 elif st.session_state.scene =="ignore_cabin_path_to_house":
-     st.write("You turn right back around, resisting your curiosity of the mysterious cabin, and headback to the fork in the road.")
+     st.write("You turn right back around, resisting any curiosity for the mysterious cabin, and headback to the fork in the road.")
      col1, col2 = st.columns(2)
 
      if col1.button ("Continue on main path", on_click=go, args=("path_to_house",)):
