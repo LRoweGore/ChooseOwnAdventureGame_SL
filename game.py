@@ -159,6 +159,9 @@ elif st.session_state.scene == "right_path":
     if col2.button("Ignore the cabin", on_click=go, args=("ignore_cabin_path_to_house",)):
         pass
 
+elif st.session_state.scene =="ignore_cabin_path_to_house",)):
+        pass
+
 elif st.session_state.scene == "cabin_inside":
     st.write("You go inside the wooden cabin, and inside you notice a number of old tools littered about. On a workbench, opposite the exit, you notice a chest on the table.")
     col1, col2 = st.columns(2)
