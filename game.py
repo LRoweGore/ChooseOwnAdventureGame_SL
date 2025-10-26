@@ -168,10 +168,10 @@ elif st.session_state.scene == "cabin_inside":
     if col2.button("Don't open the chest", on_click=go, args=("chest_leave",)):
         pass
             
-    elif st.session_state.scene =="chest_leave":
-         st.write("You get a tingle down your spine which tells you not to open the chest, and you leave the cabin..")
-         if st.button("Continue", on_click=go, args=("path_to_house",)):
-             pass
+elif st.session_state.scene =="chest_leave":
+     st.write("You get a tingle down your spine which tells you not to open the chest, and you leave the cabin.")
+     if st.button("Continue", on_click=go, args=("path_to_house",)):
+     pass
     
     
             
