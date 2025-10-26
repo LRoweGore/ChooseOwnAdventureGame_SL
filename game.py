@@ -157,9 +157,17 @@ elif st.session_state.scene == "right_path":
         pass
         
     if col2.button("Ignore the cabin", on_click=go, args=("ignore_cabin_path_to_house",)):
+        st.write("You turn right back around, ignoring the cabin.")
         pass
 
 elif st.session_state.scene =="ignore_cabin_path_to_house":
+     st.write("You turn right back around, resisting your curiosity of the mysterious cabin, and headback to the fork in the road.")
+     col1, col2 = st.columns(2)
+
+     if col1.button ("Continue on main path", on_click=go, args=("path_to_house",)):
+        pass
+
+     if col2.button ("Take the left path", on_click=go, args=("left_path",)):
         pass
 
 elif st.session_state.scene == "cabin_inside":
