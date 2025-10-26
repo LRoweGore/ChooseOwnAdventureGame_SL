@@ -156,8 +156,7 @@ elif st.session_state.scene == "right_path":
     if col1.button("Go inside the cabin", on_click=go, args=("cabin_inside",)):
         pass
         
-    if col2.button("Ignore the cabin", on_click=go, args=("path_to_house",)):
-        st.write("Test")
+    if col2.button("Ignore the cabin", on_click=go, args=("ignore_cabin_path_to_house",)):
         pass
 
 elif st.session_state.scene == "cabin_inside":
@@ -166,13 +165,19 @@ elif st.session_state.scene == "cabin_inside":
     if col1.button("Open the chest", on_click=go, args=("chest_death",)):
         pass
     
-    if col2.button("Don't open the chest"):
+    if col2.button("Don't open the chest", on_click=go, args=("chest_leave",)):
         st.write("You get a tingle down your spine which tells you not to open the chest, and you leave the cabin..")
         if st.button("Continue", on_click=go, args=("path_to_house",)):
             pass
+elif st.session_state.scene =="chest_leave",)):
+    st.write("Test")
+    if st.button("Continue", on_click=go, args=("path_to_house",)):
+    
+    
+            
 elif st.session_state.scene == "chest_death":
         st.write ("You reach toward the chest, and as your hand brushes the chest, before you have any time to react, it lunges at you. Its teeth sink into your arm and within seconds, you can no longer move your body. You've been paralysed and feel no pain either.")
-        st.write ("You fall to the floor, and the mimic chomps away at your flesh. What was a minute feels like an eternity, then everything turns to black. You are dead.")
+        st.write ("You fall to the floor, and the mimic chomps away at your flesh, then everything turns to black. You are dead.")
         play_sound("sounds/ds_go.wav")
         if st.button("R to Restart", on_click=restart):
             pass
