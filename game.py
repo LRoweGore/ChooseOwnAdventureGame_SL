@@ -173,6 +173,7 @@ elif st.session_state.scene == "cabin_inside":
     elif st.session_state.scene =="chest_leave":
          st.write("Test")
          if st.button("Continue", on_click=go, args=("path_to_house",)):
+             pass
     
     
             
