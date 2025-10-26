@@ -169,9 +169,10 @@ elif st.session_state.scene == "cabin_inside":
         st.write("You get a tingle down your spine which tells you not to open the chest, and you leave the cabin..")
         if st.button("Continue", on_click=go, args=("path_to_house",)):
             pass
-elif st.session_state.scene =="chest_leave":
-     st.write("Test")
-     if st.button("Continue", on_click=go, args=("path_to_house",)):
+            
+    elif st.session_state.scene =="chest_leave":
+         st.write("Test")
+         if st.button("Continue", on_click=go, args=("path_to_house",)):
     
     
             
