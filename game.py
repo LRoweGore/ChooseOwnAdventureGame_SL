@@ -223,7 +223,7 @@ elif st.session_state.scene == "inside_house":
        # pass
 
 # Blue path
-elif st.session_state.scene == "blue_path":
+"""elif st.session_state.scene == "blue_path":
     st.write("You push the door open, and you're hit with a blast of light, and an aroma of meat, roasted vegetables and mead! A large banquet appears.")
         if st.button("Eat at the banquet"):
         st.write("You eat and feel satisfied. You spot a large covered painting. Do you unveil it?")
@@ -234,7 +234,7 @@ elif st.session_state.scene == "blue_path":
             st.write("You decide not to unveil it and head to the Red Ruby Door.")
     else:
         if st.button("Ignore the food", on_click=go, args=("red_path",)):
-            pass
+            pass"""
 
 # Red path
 """ elif st.session_state.scene == "red_path":
