@@ -215,15 +215,17 @@ elif st.session_state.scene =="dont_enter":
 elif st.session_state.scene == "inside_house":
         st.write ("You try the front door of the house, it's open. You take a few steps forward inside, and a chill wind hits you.")
         st.write ("A panic overcomes you, and you snap out of the trance you were in but as you turn to leave, the front door slams shut! You try the door but to no avail, your only choice is forward. You notice a door on your left, a red ruby jewel embedded in the centre of the door, and another door on the right with a blue sapphire jewel embedded   in the centre of its door.")
-    if st.button("Open the Blue Door", on_click=go, args=("blue_path",)):
+    
+     if st.button("Open the Blue Door", on_click=go, args=("blue_path",)):
         pass
-    if st.button("Open the Red Door", on_click=go, args=("red_path",)):
+        
+     if st.button("Open the Red Door", on_click=go, args=("red_path",)):
         pass
 
 # Blue path
 elif st.session_state.scene == "blue_path":
     st.write("You push the door open, and you're hit with a blast of light, and an aroma of meat, roasted vegetables and mead! A large banquet appears.")
-    if st.button("Eat at the banquet"):
+        if st.button("Eat at the banquet"):
         st.write("You eat and feel satisfied. You spot a large covered painting. Do you unveil it?")
         if st.button("Unveil the painting", on_click=go, args=("red_path",)):
             play_sound("sounds/lotr.wav")
