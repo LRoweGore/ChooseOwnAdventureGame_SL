@@ -137,7 +137,6 @@ elif st.session_state.scene == "chalice_leave":
      if col2.button("Take right path", on_click=go, args=("right_path",)):
          pass
     
-# Separated the death logic into its own scene for cleaner navigation
 elif st.session_state.scene == "dead_from_chalice":
     st.write("Unable to resist the sweet smell, you drink from the chalice, gulping down every last drop. As the last drop rolls down your throat, you take a moment, smacking your lips savouring the last remnants on your taste buds.")
     st.write("Suddenly, you drop the chalice and it clatters as you drop it to the ground.")
@@ -181,8 +180,12 @@ elif st.session_state.scene == "cabin_inside":
             
 elif st.session_state.scene =="chest_leave":
      st.write("You get a tingle down your spine which instinctively encourages you not to open the chest, and you leave the cabin, back down the path.")
-     if st.button("Continue", on_click=go, args=("path_to_house",)):
-         pass      
+    col1, col2 = st.columns(2)
+     if col1.button("Continue", on_click=go, args=("path_to_house",)):
+         pass    
+
+     if col2.button("Take the left path", on_click=go, args=("left path",)):
+         pass
             
 elif st.session_state.scene == "chest_death":
         st.write ("You reach toward the chest, and as your hand brushes the chest, before you have any time to react, it lunges at you. Its teeth sink into your arm and within seconds, you can no longer move your body. You've been paralysed and feel no pain either.")
