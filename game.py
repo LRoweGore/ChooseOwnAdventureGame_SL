@@ -217,10 +217,10 @@ elif st.session_state.scene == "inside_house":
         st.write ("You try the front door of the house, it's open. You take a few steps forward inside, and a chill wind hits you.")
         st.write ("A panic overcomes you, and you snap out of the trance you were in but as you turn to leave, the front door slams shut! You try the door but to no avail, your only choice is forward. You notice a door on your left, a red ruby jewel embedded in the centre of the door, and another door on the right with a blue sapphire jewel embedded   in the centre of its door.")
         
-    if st.button("Open the Blue Door", on_click=go, args=("blue_path",))
-        pass
-    if st.button("Open the Red Door", on_click=go, args=("red_path",)):
-        pass
+    #if st.button("Open the Blue Door", on_click=go, args=("blue_path",))
+      #  pass
+    #if st.button("Open the Red Door", on_click=go, args=("red_path",)):
+       # pass
 
 # Blue path
 #elif st.session_state.scene == "blue_path":
@@ -271,7 +271,7 @@ elif st.session_state.scene == "inside_house":
    # if c2.button("Back", on_click=go, args=("back_book",)):
     #    pass
     #if c3.button("Middle", on_click=go, args=("middle_book",)):
-        pass
+        #pass
 
 #elif st.session_state.scene == "front_book":
   # st.write("You open the book from the front. It's mostly unintelligible. Do you check the back or the middle?")
@@ -283,9 +283,9 @@ elif st.session_state.scene == "inside_house":
 #elif st.session_state.scene == "back_book":
    # st.write("You open the book from the back. There are numerous symbols including a Leviathan Cross and the word 'Daemonium'.")
   #  if st.button("Front", on_click=go, args=("front_book",)):
-        play_sound("sounds/pageflip.wav")
+       # play_sound("sounds/pageflip.wav")
     #if st.button("Middle", on_click=go, args=("middle_book",)):
-        play_sound("sounds/pageflip.wav")
+       # play_sound("sounds/pageflip.wav")
 
 #elif st.session_state.scene == "middle_book":
   #  play_sound("sounds/pageflip.wav")
