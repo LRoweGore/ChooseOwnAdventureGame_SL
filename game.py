@@ -183,7 +183,7 @@ elif st.session_state.scene =="chest_leave":
      if col1.button("Continue", on_click=go, args=("path_to_house",)):
          pass    
 
-     if col2.button("Take the left path", on_click=go, args=("left path",)):
+     if col2.button("Take the left path", on_click=go, args=("left_path",)):
          pass
             
 elif st.session_state.scene == "chest_death":
