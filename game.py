@@ -179,7 +179,7 @@ elif st.session_state.scene == "cabin_inside":
             
 elif st.session_state.scene =="chest_leave":
      st.write("You get a tingle down your spine which instinctively encourages you not to open the chest, and you leave the cabin, back down the path.")
-    col1, col2 = st.columns(2)
+     col1, col2 = st.columns(2)
      if col1.button("Continue", on_click=go, args=("path_to_house",)):
          pass    
 
