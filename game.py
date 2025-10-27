@@ -196,7 +196,7 @@ elif st.session_state.scene == "chest_death":
 # Path to house
 elif st.session_state.scene == "path_to_house":
     st.write("You continue walking down the path, it's still quite foggy but you can make out what appears to be a house which is protected by a large black gate.")
-    st.write("As you approach the gate, a gust of wind clears the fog just enough, and the house becomes more visible. The house looks like something straight out of a horror movie, a rotting wooden structure, the windows dark and empty, vines encompassing most of the house. The air feels heavy now, and you have a decision to make.")
+    st.write("As you approach the gate, a gust of wind clears the fog. The house looks like something straight out of a horror movie, a rotting wooden structure, the windows dark and empty, whilst vines encompass most of the house. The air feels heavy, and you have a decision to make.")
     st.write("Do you enter the house?")
     col1, col2 = st.columns(2)
     if col1.button("Yes, enter", on_click=go, args=("inside_house",)):
@@ -206,15 +206,15 @@ elif st.session_state.scene == "path_to_house":
 
 elif st.session_state.scene =="dont_enter":
         st.write ("Suddenly, there's a loud clang to your left where a rusty intercom sits, and a yellow gas spills out and fills the space around you.")
-        st.write ("You breathe it in, and before you can react, you're compelled to completely change your mind about entering the house, you walk towards the house as if under a spell... reminds you of a movie")
+        st.write ("You breathe it in, and before you can react, you're compelled to completely change your mind about entering the house, you walk towards the house as if under a spell...")
         st.write ("You try the front door of the house, it's open. You take a few steps forward inside, and a chill wind hits you.")
-        st.write ("A panic overcomes you, and you snap out of the trance you were in but as you turn to leave, the front door slams shut. A voice fills the air 'The way is shut'. As you realise there's no way back, you survey the area around you. You notice a door on your left, a red ruby jewel embedded in the centre of the door. The right a door with a blue sapphire jewel embedded in the centre of its door.")
-        st.write ("You try the front door of the house, it's open. You take a few steps inside, and a chill wind hits you.")
+        st.write ("A panic overcomes you, and you snap out of the trance you were in but as you turn to leave, the front door slams shut! You try the door but to no avail, your only choice is forward. You notice a door on your left, a red ruby jewel embedded in the centre of the door, and another door on the right with a blue sapphire jewel embedded in the centre of its door.")
         if st.button("Continue", on_click=go, args=("inside_house",)):
             pass
 
 elif st.session_state.scene == "inside_house":
-    st.write("You try the front door of the house, it's open. A panic overcomes you and then the front door slams shut. You notice two doors: one with a red ruby, one with a blue sapphire.")
+        st.write ("You try the front door of the house, it's open. You take a few steps forward inside, and a chill wind hits you.")
+        st.write ("A panic overcomes you, and you snap out of the trance you were in but as you turn to leave, the front door slams shut! You try the door but to no avail, your only choice is forward. You notice a door on your left, a red ruby jewel embedded in the centre of the door, and another door on the right with a blue sapphire jewel embedded   in the centre of its door.")
     if st.button("Open the Blue Door", on_click=go, args=("blue_path",)):
         pass
     if st.button("Open the Red Door", on_click=go, args=("red_path",)):
