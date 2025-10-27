@@ -236,7 +236,7 @@ elif st.session_state.scene == "blue_path":
         if st.button("Ignore the food", on_click=go, args=("red_path",)):
             pass"""
 
-//# Red path
+# Red path
 """ elif st.session_state.scene == "red_path":
     st.write("You approach the Red Ruby Door and enter a museum-like room with displays. Inside is a doll in a cabinet. Do you open it?")
     if st.button("Open the cabinet"):
