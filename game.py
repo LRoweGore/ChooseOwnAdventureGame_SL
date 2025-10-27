@@ -219,9 +219,8 @@ elif st.session_state.scene == "inside_house":
         
     if st.button("Open the Blue Door", on_click=go, args=("blue_path",))
         pass
-        
-         if st.button("Open the Red Door", on_click=go, args=("red_path",)):
-            pass
+    if st.button("Open the Red Door", on_click=go, args=("red_path",)):
+        pass
 
 # Blue path
 elif st.session_state.scene == "blue_path":
