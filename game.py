@@ -297,7 +297,7 @@ elif st.session_state.scene == "inside_house":
      #   pass
 
 # Fallback
-elif:
+else
     st.write("restarting.")
     if st.button("Restart", on_click=restart):
         pass
