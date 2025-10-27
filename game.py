@@ -300,4 +300,4 @@ elif st.session_state.scene == "middle_book":
 else:
     st.write("restarting.")
     if st.button("Restart", on_click=restart):
-        pass 
+        pass
