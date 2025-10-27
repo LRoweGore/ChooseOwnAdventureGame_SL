@@ -222,7 +222,7 @@ elif st.session_state.scene == "inside_house":
    # if st.button("Open the Red Door", on_click=go, args=("red_path",)):
        # pass
 
-"""# Blue path
+# Blue path
 elif st.session_state.scene == "blue_path":
     st.write("You push the door open, and you're hit with a blast of light, and an aroma of meat, roasted vegetables and mead! A large banquet appears.")
         if st.button("Eat at the banquet"):
@@ -234,7 +234,7 @@ elif st.session_state.scene == "blue_path":
             st.write("You decide not to unveil it and head to the Red Ruby Door.")
     else:
         if st.button("Ignore the food", on_click=go, args=("red_path",)):
-            pass"""
+            pass
 
 # Red path
 """ elif st.session_state.scene == "red_path":
@@ -294,10 +294,10 @@ elif st.session_state.scene == "middle_book":
     play_sound("sounds/gameover.wav")
     st.write("---\nThe End\n---\nThank you for playing and your help with this mini-project!")
     if st.button("Restart", on_click=restart):
-        pass
+        pass"""
 
 # Fallback
 else:
     st.write("restarting.")
     if st.button("Restart", on_click=restart):
-        pass """
+        pass 
