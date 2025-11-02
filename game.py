@@ -258,6 +258,10 @@ elif st.session_state.scene =="remove_fabric":
 elif st.session_state.scene =="painting_button_press":
         st.write("You press the button. A melody plays, and for some reason, it gives you hope.")
         play_sound("sounds/lotr.wav")
+        if st.button("Continue", on_click=go, args=("painting_exit_happy",)):
+            pass
+elif st.session_state.scene =="painting_exit_happy":
+    st.write("You leave the banquet room with a rekindled spirit and head towards the Red Ruby Door")
 # if st.button("Eat at the banquet"):
        # st.write("You eat and feel satisfied. You spot a large covered painting. Do you unveil it?")
        # if st.button("Unveil the painting", on_click=go, args=("red_path",)):
