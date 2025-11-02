@@ -4,7 +4,7 @@ import os
 import sys
 
     
-# Helper to get resource path (works with local files and PyInstaller)
+# function to get resource path, helps when running script with Pyinstaller. 
 def resource_path(relative_path):
     try:
         base_path = sys._MEIPASS
@@ -12,7 +12,7 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
-# Helper to play audio (Streamlit can embed audio widgets)
+# function to play audio 
 def play_sound(sound_relative_path):
     sound_path = resource_path(sound_relative_path)
     if os.path.exists(sound_path):
@@ -31,12 +31,12 @@ if "scene" not in st.session_state:
 if "history" not in st.session_state:
     st.session_state.history = []
 
-# Navigation helper
+# Navigation function
 def go(next_scene, note=None):
     st.session_state.history.append((st.session_state.scene, note))
     st.session_state.scene = next_scene
 
-# Restart helper
+# Restart function
 def restart():
     st.session_state.scene = "start"
     st.session_state.history = []
@@ -46,7 +46,7 @@ def write_paragraphs(paragraphs):
     for p in paragraphs:
         st.write(p)
 
-# App UI
+# Game UI 
 st.title("Lewis' Mini Text Adventure Game")
 
 if st.session_state.scene == "start":
@@ -216,10 +216,11 @@ elif st.session_state.scene =="dont_enter":
 elif st.session_state.scene == "inside_house":
         st.write ("You try the front door of the house, it's open. You take a few steps forward inside, and a chill wind hits you.")
         st.write ("A panic overcomes you, and you snap out of the trance you were in but as you turn to leave, the front door slams shut! You try the door but to no avail, your only choice is forward. You notice a door on your left, a red ruby jewel embedded in the centre of the door, and another door on the right with a blue sapphire jewel embedded   in the centre of its door.")
-        
-    #if st.button("Open the Blue Door", on_click=go, args=("blue_path",))
+    st.write ("Which door do you open?")
+    col, col2 = st.columns(2)
+    if col1.button("Open the Blue Door", on_click=go, args=("blue_path",))
       #  pass
-    #if st.button("Open the Red Door", on_click=go, args=("red_path",)):
+    if col2.button("Open the Red Door", on_click=go, args=("red_path",)):
        # pass
 
 # Blue path
