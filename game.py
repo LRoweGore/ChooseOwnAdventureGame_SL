@@ -216,12 +216,12 @@ elif st.session_state.scene =="dont_enter":
 elif st.session_state.scene == "inside_house":
         st.write ("You try the front door of the house, it's open. You take a few steps forward inside, and a chill wind hits you.")
         st.write ("A panic overcomes you, and you snap out of the trance you were in but as you turn to leave, the front door slams shut! You try the door but to no avail, your only choice is forward. You notice a door on your left, a red ruby jewel embedded in the centre of the door, and another door on the right with a blue sapphire jewel embedded   in the centre of its door.")
-    st.write ("Which door do you open?")
-    col, col2 = st.columns(2)
-    if col1.button("Open the Blue Door", on_click=go, args=("blue_path",))
-      #  pass
-    if col2.button("Open the Red Door", on_click=go, args=("red_path",)):
-       # pass
+        st.write ("Which door do you open?")
+        col, col2 = st.columns(2)
+        if col1.button("Open the Blue Door", on_click=go, args=("blue_path",))
+            pass
+        if col2.button("Open the Red Door", on_click=go, args=("red_path",)):
+            pass
 
 # Blue path
 #elif st.session_state.scene == "blue_path":
