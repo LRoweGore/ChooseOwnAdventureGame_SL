@@ -244,6 +244,17 @@ elif st.session_state.scene =="eat_banquet":
             pass
         if col2.button("Leave fabric alone", on_click=go, args=("leave_fabric",)):
             pass
+
+elif st.session_state.scene =="skip_banquet":
+        st.write("You decide you're not hungry, and resist the urge to eat.")
+        st.write("Instead, you have a closer look around the room, and notice a large object on the wall, it is covered by a red fabric")
+        st.write("Do you remove the fabric?")
+        col1, col2 = st.columns(2)
+        if col1.button("Remove fabric", on_click=go, args=("remove_fabric",)):
+            pass
+        if col2.button("Leave fabric alone", on_click=go, args=("leave_fabric",)):
+            pass
+            
 elif st.session_state.scene =="remove_fabric":
         st.write("You walk over to the large painting and pull the red fabric covering it. On the painting, a group of 9 sits at a banquet table, much like the one behind you.")
         st.write("1 older man and a smaller humanoid with mighty beards, 2 handsome men with dark hair, a pointy-eared humanoid with fair hair, 4 smaller humanoid creatures with rather large and hairy feet, seems familiar.")
