@@ -275,6 +275,9 @@ elif st.session_state.scene =="painting_exit_happy":
         st.write("You leave the banquet room with a rekindled spirit and head towards the Red Ruby Door")
         if st.button("Open Ruby Door", on_click=go, args=("red_path",)):
             pass
+
+elif st.session_state.scene=="leave_fabric":
+        st.write("Test")
 # if st.button("Eat at the banquet"):
        # st.write("You eat and feel satisfied. You spot a large covered painting. Do you unveil it?")
        # if st.button("Unveil the painting", on_click=go, args=("red_path",)):
