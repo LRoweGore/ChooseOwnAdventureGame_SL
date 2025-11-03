@@ -237,8 +237,8 @@ elif st.session_state.scene == "blue_path":
 elif st.session_state.scene =="eat_banquet":
         st.write("You sit down at the table, overwhelmed by the choice, and not sure where to start, you grab the closest food item, scoffing it all down.")
         st.write("This might be some of the best food you've ever had, and just as you go take another bite, you can't, you feel like your stomach is about to burst!")
-        st.write("Feeling satisfied, you rise up from the table, and look around you. You spot for the first time, what looks to be a large object on the wall covered by a red fabric.")
-        st.write("Do you remove the fabric?")
+        st.write("Feeling satisfied, you rise up from the table, and look around you. You spot what looks to be a large object on the wall covered by a red fabric.")
+        st.write("Do you go over and remove the fabric?")
         col1, col2 = st.columns(2)
         if col1.button("Remove fabric", on_click=go, args=("remove_fabric",)):
             pass
@@ -248,7 +248,7 @@ elif st.session_state.scene =="eat_banquet":
 elif st.session_state.scene =="skip_banquet":
         st.write("You decide you're not hungry, and resist the urge to eat.")
         st.write("Instead, you have a closer look around the room, and notice a large object on the wall, it is covered by a red fabric")
-        st.write("Do you remove the fabric?")
+        st.write("Do you go over and remove the fabric?")
         col1, col2 = st.columns(2)
         if col1.button("Remove fabric", on_click=go, args=("remove_fabric",)):
             pass
