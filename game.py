@@ -291,25 +291,24 @@ elif st.session_state.scene=="leave_fabric":
 
 #red path
 elif st.session_state.scene=="red_path":
-        st.write("You head over to the Ruby Door, the encrusted jewel glistening as you approach. You push the handle for the door and enter into the room.")
-        st.write("You observe your surroundings, and notice you appear to be in some sort of museum, various books, scepters, and dolls in glass display cabinets.")
-        st.write("You have a wander inward, and as you peer between each of the displays, you notice one of them is slightly ajar.")
+        st.write("You head over to the Ruby Door, the encrusted jewel glistening as you approach. You push the handle for the door and enter the room.")
+        st.write("You observe your surroundings, noticing you appear to be in some sort of museum, various books, scepters, and dolls in glass display cabinets.")
+        st.write("You wander inward, and as you peer between each of the displays, you notice one of them is slightly ajar.")
+        st.write("Inside is a doll, its got red hair, a blue floral dress, striped socks, black shoes, and a white apron which says 'I Love You'.")
+        st.write("Do you open the cabinet and take a closer look at it or shut it?")
         col1, col2 = st.columns(2)
         if col1.button("Open it", on_click=go, args=("open_cabinet",)):
             pass
         if col2.button("Close it", on_click=go, args=("close_cabinet",)):
             pass
-    
-# if st.button("Eat at the banquet"):
-       # st.write("You eat and feel satisfied. You spot a large covered painting. Do you unveil it?")
-       # if st.button("Unveil the painting", on_click=go, args=("red_path",)):
-         #   play_sound("sounds/lotr.wav")
-         #   st.write("A melody plays and gives you hope. You leave towards the Red Ruby Door.")
-      #  if st.button("Don't unveil", on_click=go, args=("red_path",)):
-         #   st.write("You decide not to unveil it and head to the Red Ruby Door.")
-    #else:
-       # if st.button("Ignore the food", on_click=go, args=("red_path",)):
-           # pass
+
+elif st.session_state.scene=="open_cabinet":
+        st.write("You open the cabinet, and grab the doll, examining it all round, there doesn't seem to be anything out of the ordinary with it.")
+        st.write("In that moment of safety, you feel a presence behind you, you quickly turn around, but nothing is there. You clench your fist, thus becoming aware your hands feel a little lighter. The doll is gone from your grasp.")
+        st.write("Confused, you look around and as you turn back around to the glass cabinet, you see that the doll sits back in its place. That's when the cabinet starts to slowly close on its own.")
+        st.write("You watch in bewilderment, and as it reaches a close, your gaze catches your own reflection. You notice a shadow looming over you.")
+        
+
 
 # Red path
 #elif st.session_state.scene == "red_path":
