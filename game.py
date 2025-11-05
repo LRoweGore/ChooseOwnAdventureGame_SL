@@ -311,7 +311,7 @@ elif st.session_state.scene=="open_cabinet":
             pass
 
 elif st.session_state.scene=="cabinet_death":
-        play_sound("sounds/clap.wav")
+        play_sound("sounds/Clap.wav")
         play_sound("sounds/myneck.wav")
         st.write("Before you even have time to react. You hear 2 Claps and your neck snaps. You are Dead.")
         
