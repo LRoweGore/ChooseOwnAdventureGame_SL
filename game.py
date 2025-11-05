@@ -306,7 +306,14 @@ elif st.session_state.scene=="open_cabinet":
         st.write("You open the cabinet, and grab the doll, examining it all round, there doesn't seem to be anything out of the ordinary with it.")
         st.write("In that moment of safety, you feel a presence behind you, you quickly turn around, but nothing is there. You clench your fist, thus becoming aware your hands feel a little lighter. The doll is gone from your grasp.")
         st.write("Confused, you look around and as you turn back around to the glass cabinet, you see that the doll sits back in its place. That's when the cabinet starts to slowly close on its own.")
-        st.write("You watch in bewilderment, and as it reaches a close, your gaze catches your own reflection. You notice a shadow looming over you.")
+        st.write("You watch in bewilderment, and as it reaches a close, you catch your own reflection although something is amiss, a dark shadow is looming over you.")
+        st.button("Continue", on_click=go, args=("cabinet_death",)):
+
+elif st.session_state.scene=="cabinet_death":
+        play_sound("sounds/clap.wav")
+        play_sound("sounds/myneck.wav")
+        st.write("Before you even have time to react. You hear 2 Claps and your neck snaps. You are Dead.")
+        
         
 
 
