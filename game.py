@@ -313,6 +313,8 @@ elif st.session_state.scene=="open_cabinet":
 elif st.session_state.scene=="cabinet_death":
         play_sound("sounds/ClapNeck.wav")
         st.write("Before you even have time to react. You hear 2 Claps and your neck snaps. You are Dead.")
+        if st.button("Restart", on_click=restart):
+            pass
         
         
 
