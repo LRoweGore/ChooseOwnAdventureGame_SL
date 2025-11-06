@@ -310,6 +310,15 @@ elif st.session_state.scene=="open_cabinet":
         if st.button("Continue", on_click=go, args=("cabinet_death",)):
             pass
 
+elif st.session_state.scene=="open_cabinet_2":
+        st.write("The temptation is overwhelming, so you decide to head back to the cabinet")
+        st.write("You open the cabinet, and grab the doll, examining it all round, there doesn't seem to be anything out of the ordinary with it.")
+        st.write("In that moment of safety, you feel a presence behind you, you quickly turn around, but nothing is there. You clench your fist, thus becoming aware your hands feel a little lighter. The doll is gone from your grasp.")
+        st.write("Confused, you look around and as you turn back around to the glass cabinet, you see that the doll sits back in its place. That's when the cabinet starts to slowly close on its own.")
+        st.write("You watch in bewilderment, and as it reaches a close, you catch your own reflection although something is amiss, a dark shadow is looming over you.")
+        if st.button("Continue", on_click=go, args=("cabinet_death",)):
+            pass
+
 elif st.session_state.scene=="cabinet_death":
         play_sound("sounds/ClapNeck.wav")
         st.write("Before you even have time to react. You hear 2 Claps and your neck snaps. You are Dead.")
@@ -321,8 +330,13 @@ elif st.session_state.scene=="close_cabinet":
         col1, col2 = st.columns(2)
         if coll.button("Enter the door", on_click=go, args=("basement_door",)):
             pass
-        if col2.button("Open the cabinet", on_click=go, args=("open_cabinet_2",)):
+        if col2.button("Actually, open the cabinet", on_click=go, args=("open_cabinet_2",)):
             pass
+
+elif st.session_state.scene=="basement_door":
+        st.write("You push down the handle, and swing the door open. It leads downwards, into a basement. With only one way to go, you head down the stairs.")
+        st.write("When you reach the bottom, you look over to your right and spot a desk filled to the brim with papers, with just enough room you could work on it and a painting.")
+        
         
 
 
