@@ -316,6 +316,13 @@ elif st.session_state.scene=="cabinet_death":
         if st.button("Restart", on_click=restart):
             pass
         
+elif st.session_state.scene=="close_cabinet":
+        st.write("You decide to close the cabinet, you snag one last look at the doll and you think to yourself, 'maybe it was for the best'. You continue through the museum and come across a wooden door.")
+        col1, col2 = st.columns(2)
+        if coll.button("Enter the door", on_click=go, args=("basement_door",)):
+            pass
+        if col2.button("Open the cabinet", on_click=go, args=("open_cabinet_2",)):
+            pass
         
 
 
