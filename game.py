@@ -57,6 +57,8 @@ if st.session_state.scene == "start":
     
     if st.button("No"):
         st.write("Journey another day then...")
+
+st.write("Any and all sounds used belong to their respective copyright holders, this project is purely for educational purposes. The views, opinions expressed are those of myself Lewis Rowe, and do not reflect any other business or company I have an affiliation with.")
         
 
 # Scene: wake_up > crossroads
@@ -368,7 +370,7 @@ elif st.session_state.scene=="second_drawer":
             pass
 
 elif st.session_state.scene=="book_interaction":
-        st.write("You stare at the book, and it seems to stare back at you. You can open the book, do you decide to open the book from the Front, Back or Middle.")
+        st.write("You stare at the book, and it seems to stare back at you. You can open the book, do you decide to open the book from the Front, Back or Middle?")
         col1, col2, col3 = st.columns(3)
         if col1.button("Front", on_click=go, args=("front_book",)):
             pass
@@ -388,13 +390,29 @@ elif st.session_state.scene=="back_book":
             
 elif st.session_state.scene=="front_book":
         st.write("You open the book from the front. You attempt to read it but it's mostly unintelligible text, you can't make out any of it, it's definitely not human language.")
-        st.write("From somewhere, you hear a faint laugh, as if mocking you. Frustrated that you've just wasted time checking the front of the book, you decide to move on and check the back, or middle of the book.")
+        st.write("From somewhere, you hear a faint laugh, as if mocking you. Frustrated that you've just wasted time checking the front of the book.")
+        st.write("Do you check the back, or middle of the book?)
         col1, col2 = st.columns(2)
         if col1.button("Back", on_click=go, args=("back_book",)):
             pass
         if col2.button("Middle", on_click=go, args=("middle_book",)):
             pass
-        
+elif st.session_state.scene=="middle_book":
+        st.write("You turn to the centre of the book, on it appears readable text, something you can read for yourself, finally.")
+        st.write("It reads, 'A great evil who once dwelled in the very domain you occupy, sealed away a millennia ago, by an unlikely hero using the words 'Daemonium Sigillum'.")
+        st.write("Below that is a messily written note, 'Don't read this aloud!' Too late, you got ahead of yourself, finally reading something you understand.")
+        st.write("The door to the basement bursts open! As you turn, a great evil launches itself towards you!")
+        if st.button("Continue", on_click=go, args=("ending",)):
+            pass
+
+elif st.session_state.scene=="ending":
+        st.write("In that very moment, you wake up, and scream out, sweating profusely... it was all a dream?")
+        st.write("You look over to your left, and your partner looks at you and asks 'If you're okay'. You reply with an unconvincing 'yeah', and rest your head back on the pillow.")
+        st.write("As you roll over and close your eyes, your partner does the same. Before they close their eyes, unbeknowst to you, they produce a wry smile...")
+        st.write("The End")
+        play_sound("sounds/gameover.wav")
+        st.write("Thankyou for playing and your help with this mini-project!")
+            
 #If anything fails, we restart. 
 else:
     st.write("restarting.")
