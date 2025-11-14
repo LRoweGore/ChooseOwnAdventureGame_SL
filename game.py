@@ -54,11 +54,10 @@ if st.session_state.scene == "start":
     
     if st.button("Start New Adventure", on_click=go, args=("wake_up",)):
         st.session_state.history = []
+    st.write("Any and all sounds used belong to their respective copyright holders, this project is purely for educational purposes. The views, opinions expressed are those of myself Lewis Rowe, and do not reflect any other business or company I have an affiliation with.")
     
     if st.button("No"):
         st.write("Journey another day then...")
-
-st.write("Any and all sounds used belong to their respective copyright holders, this project is purely for educational purposes. The views, opinions expressed are those of myself Lewis Rowe, and do not reflect any other business or company I have an affiliation with.")
         
 
 # Scene: wake_up > crossroads
