@@ -13,16 +13,16 @@ import sys
   #  return os.path.join(base_path, relative_path)
 
 # function to play audio 
-#def play_sound(sound_relative_path):
-   # sound_path = resource_path(sound_relative_path)
-   # if os.path.exists(sound_path):
-      #  try:
-          #  with open(sound_path, "rb") as f:
-            #    st.audio(f.read())
-       # except Exception as e:
-          #  st.write(f"(Could not play sound: {e})")
-   # else:
-       # st.write("(Sound not found)")
+def play_sound(sound_relative_path):
+    sound_path = resource_path(sound_relative_path)
+    if os.path.exists(sound_path):
+        try:
+            with open(sound_path, "rb") as f:
+                st.audio(f.read())
+        except Exception as e:
+            st.write(f"(Could not play sound: {e})")
+    else:
+        st.write("(Sound not found)")
 
 # Init session state
 if "scene" not in st.session_state:
