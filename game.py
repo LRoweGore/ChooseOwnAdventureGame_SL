@@ -377,6 +377,17 @@ elif st.session_state.scene=="book_interaction":
         if col3.button("Back", on_click=go, args=("back_book",)):
             pass
 
+elif st.session_state.scene=="back_book":
+        st.write("You open the book from the back. Across the pages here, there are numerous images and scribbles of what looks to be religious and occult symbols. You spot one you recognize, a 'Leviathan Cross' it's a double cross with an infinity sign, and underneath the words 'Daemonium'.")
+        st.write("Ominous sign... pressing on, you decide to check the other areas of the book.")
+        col1, col2 = st.columns(2)
+        if col1.button("Middle", on_click=go, args=("front_book",)):
+            pass
+        if col2.button("Open second drawer", on_click=go, args=("middle_book",)):
+            pass
+    
+        
+
 
 #If anything fails, we restart. 
 else:
