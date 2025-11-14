@@ -67,7 +67,7 @@ elif st.session_state.scene == "wake_up":
 
 # Scene: crossroads
 elif st.session_state.scene == "crossroads":
-    st.header("Crossroads")
+    #st.header("Crossroads")
     st.write("As you continue following the path, you approach a crossroads, do you go left or right?")
     col1, col2 = st.columns(2)
     with col1:
