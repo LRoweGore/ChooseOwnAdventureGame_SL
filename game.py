@@ -352,6 +352,13 @@ elif st.session_state.scene=="the_desk":
             pass
         if col2.button("Open second drawer", on_click=go, args=("second_drawer",)):
             pass
+
+elif st.session_state.scene=="first_drawer":
+        st.write("You place the key into the keyhole, turn it, and open the drawer.")
+        st.write("Inside is a small charm, it appears to be a puzzle box, golden and black in colour with unfamiliar markings.")
+        st.write("You pop the charm onto your waist belt, and go to open the second drawer.")
+        if st.button("Continue", on_click=go, args=("second_drawer",)):
+            pass
             
 # Red path
 #elif st.session_state.scene == "red_path":
