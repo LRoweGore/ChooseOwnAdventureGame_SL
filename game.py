@@ -387,7 +387,7 @@ elif st.session_state.scene=="back_book":
             pass
             
 elif st.session_state.scene=="front_book":
-        st.write("You open the book from the front. You attempt to read it but it's mostly unintelligible text, you can't make much of it, it's but definitely not human.")
+        st.write("You open the book from the front. You attempt to read it but it's mostly unintelligible text, you can't make out any of it, it's definitely not human language.")
         st.write("From somewhere, you hear a faint laugh, as if mocking you. Frustrated that you've just wasted time checking the front of the book, you decide to move on and check the back, or middle of the book.")
         col1, col2 = st.columns(2)
         if col1.button("Back", on_click=go, args=("back_book",)):
