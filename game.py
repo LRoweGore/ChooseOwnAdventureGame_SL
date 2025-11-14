@@ -51,12 +51,12 @@ st.title("Lewis' Mini Text Adventure Game")
 
 if st.session_state.scene == "start":
     st.write("Would you like to start a new adventure?")
-    
-    if st.button("Start New Adventure", on_click=go, args=("wake_up",)):
+
+    col1, col2 = st.columns(2)
+    if col1.button("Start New Adventure", on_click=go, args=("wake_up",)):
         st.session_state.history = []
-    st.write("Any and all sounds used belong to their respective copyright holders, this project is purely for educational purposes. The views, opinions expressed are those of myself Lewis Rowe, and do not reflect any other business or company I have an affiliation with.")
     
-    if st.button("No"):
+    if col2.button("No"):
         st.write("Journey another day then...")
         
 
