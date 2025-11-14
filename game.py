@@ -335,14 +335,24 @@ elif st.session_state.scene=="close_cabinet":
 
 elif st.session_state.scene=="basement_door":
         st.write("You push down the handle, and swing the door open. It leads downwards, into a basement. With only one way to go, you head down the stairs.")
-        st.write("When you reach the bottom, you look over to your right and spot a desk filled to the brim with papers, with just enough room you could work on it, as a painting takes up the rest of the space.")
+        st.write("When you reach the bottom, you look over to your right and spot a desk filled to the brim with papers, it has just enough room you could work on it due to a painting which takes up the rest of the space.")
         col1, col2 = st.columns(2)
         if coll.button("Check the desk", on_click=go, args=("the_desk",)):
             pass
         if col2.button("Look at painting", on_click=go, args=("the_painting",)):
             pass
-        
 
+elif st.session_state.scene=="the_desk": 
+        st.write("You walk over to the desk and examine it, sifting through a large stack of written notes.")
+        st.write("Upon examination, you notice these hastily scrawled notes are covering occult, demonic, and religious topics. Whilst flicking through, something falls from between the papers and clatters on the ground.")
+        st.write("You scan around the floor searching for what fell, and by your foot you notice a key, and pick it up.") 
+        st.write("You look around the desk to see if there's anything you can use the key on, and notice the desk has two drawers with keyholes. You attempt to pull them open but expectedly they're locked.")
+        col1, col2 = st.columns(2)
+        if col1.button("Open first drawer", on_click=go, args=("first_drawer",)):
+            pass
+        if col2.button("Open second drawer", on_click=go, args=("second_drawer",)):
+            pass
+            
 # Red path
 #elif st.session_state.scene == "red_path":
    # st.write("You approach the Red Ruby Door and enter a museum-like room with displays. Inside is a doll in a cabinet. Do you open it?")
