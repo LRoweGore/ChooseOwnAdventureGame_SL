@@ -15,10 +15,10 @@ def resource_path(relative_path):
 # function to play audio, finding that audio. Conversion from Python to StreamLit. -.- 
 def play_sound(sound_relative_path):
     sound_path = resource_path(sound_relative_path)
-        if os.path.exists(sound_path):
-            try:
-                with open(sound_path, "rb") as f:
-                    st.audio(f.read())
+    if os.path.exists(sound_path):
+        try:
+            with open(sound_path, "rb") as f:
+                 st.audio(f.read())
             except Exception as e:
                 st.write(f"(Could not play sound: {e})")
         else:
