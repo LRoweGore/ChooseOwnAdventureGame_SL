@@ -50,7 +50,7 @@ def write_paragraphs(paragraphs):
 st.title("Lewis' Mini Text Adventure Game")
 
 if st.session_state.scene == "start":
-    st.write("Would you like to start a new adventure?")
+    st.header("Would you like to start a new adventure?")
 
     col1, col2 = st.columns(2)
     if col1.button("Start New Adventure", on_click=go, args=("wake_up",)):
