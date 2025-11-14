@@ -19,10 +19,10 @@ def play_sound(sound_relative_path):
         try:
             with open(sound_path, "rb") as f:
                  st.audio(f.read())
-            except Exception as e:
-                st.write(f"(Could not play sound: {e})")
-        else:
-            st.write("(Sound not found)")
+        except Exception as e:
+            st.write(f"(Could not play sound: {e})")
+    else:
+        st.write("(Sound not found)")
 
 # Init session state
 if "scene" not in st.session_state:
