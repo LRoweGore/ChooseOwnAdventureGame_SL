@@ -4,13 +4,13 @@ import os
 import sys
 
     
-# function to get resource path, helps when running script with Pyinstaller. 
-def resource_path(relative_path):
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-    return os.path.join(base_path, relative_path)
+# function to get resource path, helps when running script with Pyinstaller. not sure if this and play_sound are needed anymore tbh tbf. 
+#def resource_path(relative_path):
+  #  try:
+     #   base_path = sys._MEIPASS
+  #  except Exception:
+    #    base_path = os.path.abspath(".")
+  #  return os.path.join(base_path, relative_path)
 
 # function to play audio 
 def play_sound(sound_relative_path):
