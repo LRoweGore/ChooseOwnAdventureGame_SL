@@ -336,7 +336,7 @@ elif st.session_state.scene=="close_cabinet":
 elif st.session_state.scene=="basement_door":
         st.write("You push down the handle, and swing the door open. It leads downwards, into a basement. With only one way to go, you head down the stairs.")
         st.write("When you reach the bottom, you look over to your right and spot a desk filled to the brim with papers, with just enough room you could work on it, as a painting takes up the rest of the space.")
-         col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2)
         if coll.button("Check the desk", on_click=go, args=("the_desk",)):
             pass
         if col2.button("Look at painting", on_click=go, args=("the_painting",)):
