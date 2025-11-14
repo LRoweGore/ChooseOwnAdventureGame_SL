@@ -4,15 +4,15 @@ import os
 import sys
 
     
-# function to get resource path, helps when running script with Pyinstaller. not sure if this and play_sound are needed anymore tbh tbf. 
-#def resource_path(relative_path):
-  #  try:
-     #   base_path = sys._MEIPASS
-  #  except Exception:
-    #    base_path = os.path.abspath(".")
-  #  return os.path.join(base_path, relative_path)
+# function to get resource path, this will help with finding the sound. 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
-# function to play audio 
+# function to play audio, finding that audio. Conversion from Python to StreamLit. -.- 
 def play_sound(sound_relative_path):
     sound_path = resource_path(sound_relative_path)
         if os.path.exists(sound_path):
