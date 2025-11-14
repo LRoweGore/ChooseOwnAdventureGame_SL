@@ -59,7 +59,7 @@ if st.session_state.scene == "start":
     
     if col2.button("No"):
         st.write("Journey another day then...")
-
+    st.write("----------------------------------------------------------------")
     st.write("\n\n\n\n\n")
     st.write("\n\n\n\n\n")
     st.write("\n\n\n\n\n")
