@@ -41,11 +41,6 @@ def restart():
     st.session_state.scene = "start"
     st.session_state.history = []
 
-# Small utility to show paragraphs with optional delays (non-blocking)
-def write_paragraphs(paragraphs):
-    for p in paragraphs:
-        st.write(p)
-
 # Game UI 
 st.title("Lewis' Mini Text Adventure Game")
 
