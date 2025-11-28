@@ -208,10 +208,10 @@ elif st.session_state.scene =="dont_enter":
         st.write ("Suddenly, there's a loud clang to your left where a rusty intercom sits, and a yellow gas spills out and fills the space around you.")
         st.write ("You breathe it in, and before you can react, you're compelled to completely change your mind about entering the house, you walk towards the house as if under a spell...")
     
-        if st.button("Continue", on_click=go, args=("inside_house",)):
+        if st.button("Continue", on_click=go, args=("alt_house_entry",)):
             pass
 
-elif st.session_state.scene =="Alt_house_entry":
+elif st.session_state.scene =="alt_house_entry":
         st.write ("You try the front door of the house, it's open. You take a few steps forward inside, and a chill wind hits you.")
         st.write ("A panic overcomes you, and you snap out of the trance you were in but as you turn to leave, the front door slams shut! You try the door but to no avail, your only choice is forward. You notice a door on your left, a red ruby jewel embedded in the centre of the door, and another door on the right with a blue sapphire jewel embedded in the centre of its door.")
         st.write ("Which door do you open?")
@@ -250,7 +250,7 @@ elif st.session_state.scene =="eat_banquet":
         col1, col2 = st.columns(2)
         if col1.button("Remove fabric", on_click=go, args=("remove_fabric",)):
             pass
-        if col2.button("Leave fabric alone", on_click=go, args=("leave_fabric",)):
+        if col2.button("Leave fabric alone", on_click=go, args=("eat_leave_fabric",)):
             pass
 
 elif st.session_state.scene =="skip_banquet":
@@ -295,6 +295,12 @@ elif st.session_state.scene=="leave_fabric":
         if col1.button("Indulge yourself", on_click=go, args=("eat_banquet",)):
             pass
         if col2.button("Go to Ruby Door", on_click=go, args=("red_path",)):
+            pass
+
+elif st.session_state.scene=="eat_leave_fabric":
+        st.write("You think it's best to leave the fabric alone.")
+        st.write("You take one last look at the ravaged banquet table, or head over to the Ruby Door?")
+        if st.button("Continue to Ruby Door", on_click=go, args=("red_path",)):
             pass
 
 #red path
