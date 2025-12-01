@@ -367,6 +367,9 @@ elif st.session_state.scene=="the_desk":
         if col2.button("Open second drawer", on_click=go, args=("second_drawer",)):
             pass
 
+elif st.session_state.scene=="the_painting":
+        st.write("Painting Zone")
+
 elif st.session_state.scene=="first_drawer":
         st.write("You place the key into the keyhole, turn it, and open the drawer.")
         st.write("Inside is a small charm, it appears to be a puzzle box, golden and black in colour with unfamiliar markings.")
