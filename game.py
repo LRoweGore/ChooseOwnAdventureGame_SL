@@ -357,7 +357,7 @@ elif st.session_state.scene=="basement_door":
             pass
 
 elif st.session_state.scene=="the_desk": 
-        st.write("You walk over to the desk and examine it, sifting through a large stack of written notes.")
+        st.write("You shimmy over to the desk and examine it, proceeding to sift through a large stack of written notes.")
         st.write("Upon examination, you notice these hastily scrawled notes are covering occult, demonic, and religious topics. Whilst flicking through, something falls from between the papers and clatters on the ground.")
         st.write("You scan around the floor searching for what fell, and by your foot you notice a key, and pick it up.") 
         st.write("You look around the desk to see if there's anything you can use the key on, and notice the desk has two drawers with keyholes. You attempt to pull them open but expectedly they're locked.")
@@ -369,7 +369,6 @@ elif st.session_state.scene=="the_desk":
 
 elif st.session_state.scene=="the_painting":
         st.write("You take a closer look at the Painting, in it appears to be a middle aged man in a blue shirt, with a chainsaw arm, he stands atop a mountain of bodies fighting off what looks to be demons. Quite the feat.")
-        st.write("With nothing else there, you walk over to the desk.")
         if st.button("Continue", on_click=go, args=("the_desk",)):
             pass
 
