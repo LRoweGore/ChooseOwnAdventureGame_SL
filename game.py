@@ -370,7 +370,8 @@ elif st.session_state.scene=="the_desk":
 elif st.session_state.scene=="the_painting":
         st.write("You take a closer look at the Painting, in it appears to be a middle aged man in a blue shirt, with a chainsaw arm, he stands atop a mountain of bodies fighting off what looks to be demons. Quite the feat.")
         st.write("With nothing else there, you walk over to the desk.")
-        st.button("Continue", on_click=go, args=("the_desk",)):
+        if st.button("Continue", on_click=go, args=("the_desk",)):
+            pass
 
 elif st.session_state.scene=="first_drawer":
         st.write("You place the key into the keyhole, turn it, and open the drawer.")
